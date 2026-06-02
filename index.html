@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MovieRecapTool tự động phân tích phim, viết recap, tạo giọng đọc AI và dựng video recap với workflow tối ưu cho creator.">
+    <meta property="og:title" content="MovieRecapTool by Kent Juno">
+    <meta property="og:description" content="Biến phim + phụ đề thành video recap có giọng đọc, timeline, cảnh quay và phụ đề đồng bộ.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/app-icon.png">
+    <title>MovieRecapTool | Kent Juno</title>
+    <link rel="icon" href="assets/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="assets/app-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-shell topbar">
+      <a class="brand" href="#top" aria-label="MovieRecapTool home">
+        <span class="brand-mark">MR</span>
+        <span>MovieRecapTool</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a data-nav href="#features">Tính năng</a>
+        <a data-nav href="#workflow">Workflow</a>
+        <a data-nav href="#pricing">Giá</a>
+        <a data-nav href="#download">Download</a>
+        <a data-nav href="#docs">Hướng dẫn</a>
+        <a data-nav href="#policy">Chính sách</a>
+        <a data-nav href="#support">Hỗ trợ</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="site-shell hero">
+        <div class="reveal">
+          <div class="eyebrow">recap.kentjuno.com / desktop creator tool</div>
+          <h1>Recap phim nhanh hơn, gọn hơn, ít lệch voice hơn.</h1>
+          <p class="hero-copy">
+            MovieRecapTool phân tích phim và phụ đề, chọn cảnh, viết kịch bản recap,
+            tạo giọng đọc bằng OmniVoice, rồi cho bạn review timeline trước khi xuất video.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pricing">Xem giá</a>
+            <a class="btn btn-secondary" href="#docs">Xem hướng dẫn</a>
+          </div>
+          <div class="trust-strip" aria-label="Product highlights">
+            <div class="trust-item">
+              <strong>1 máy</strong>
+              <span>License bind theo thiết bị</span>
+            </div>
+            <div class="trust-item">
+              <strong>OmniVoice</strong>
+              <span>Local hoặc LAN server</span>
+            </div>
+            <div class="trust-item">
+              <strong>Review</strong>
+              <span>Sửa cảnh và voice trước render</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="app-frame reveal delay-1" aria-label="MovieRecapTool interface mockup">
+          <div class="window-bar">
+            <span>Movie Recap Tool - Phase 1 MVP</span>
+            <span class="window-dots"><span></span><span></span><span></span></span>
+          </div>
+          <div class="mock-ui">
+            <div class="mock-title">CẤU HÌNH TẠO VIDEO TÓM TẮT PHIM</div>
+            <div class="mock-form">
+              <div class="mock-row">
+                <span>Video gốc:</span>
+                <span class="mock-input">Đường dẫn đến file video gốc...</span>
+                <span class="mock-small-btn">Chọn file</span>
+              </div>
+              <div class="mock-row">
+                <span>Phụ đề:</span>
+                <span class="mock-input">SRT có sẵn hoặc Whisper</span>
+                <span class="mock-small-btn">Chọn file</span>
+              </div>
+              <div class="mock-row">
+                <span>Ngôn ngữ:</span>
+                <span class="mock-select">Tiếng Việt (vi)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="mock-panel">
+              <div class="mock-tabs">
+                <span class="mock-tab active">Voice Design</span>
+                <span class="mock-tab">Voice Cloning</span>
+              </div>
+              <div class="mock-grid">
+                <span class="mock-select">Nữ thanh niên</span>
+                <span class="mock-select">Dramatic voice</span>
+                <span class="mock-select">youtube_16_9</span>
+                <span class="mock-select">Anti-Copyright cuts</span>
+              </div>
+              <div class="mock-script">female, moderate pitch, dramatic recap tone</div>
+            </div>
+            <div class="mock-main-btn">BẮT ĐẦU PHÂN TÍCH PHIM</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="site-shell section">
+        <div class="section-head">
+          <h2>Một cockpit cho toàn bộ recap.</h2>
+          <p>Không chỉ cắt ghép. Tool đi theo pipeline đầy đủ: hiểu phim, viết recap, tìm cảnh, tạo voice, đồng bộ phụ đề và cho review trước khi render.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card reveal">
+            <span class="card-kicker">01 / Analyze</span>
+            <h3>Đọc phim + subtitle</h3>
+            <p>Nhập video và phụ đề. Nếu thiếu sub, workflow có thể dùng Whisper để lấy transcript trước khi AI phân tích.</p>
+          </article>
+          <article class="card reveal delay-1">
+            <span class="card-kicker">02 / Narrate</span>
+            <h3>Kịch bản recap AI</h3>
+            <p>AI viết từng đoạn thuyết minh theo timeline, sau đó tạo voice segment để dễ review và sửa.</p>
+          </article>
+          <article class="card reveal delay-2">
+            <span class="card-kicker">03 / Sync</span>
+            <h3>Review cảnh và voice</h3>
+            <p>Chọn lại cảnh, nghe thử giọng đọc, chỉnh khoảng nghỉ, rồi mới duyệt xuất video cuối.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="workflow" class="site-shell section">
+        <div class="section-head">
+          <h2>Workflow rõ từ đầu đến cuối.</h2>
+          <p>Các bước được hiển thị theo tiến trình để creator biết tool đang làm gì và lỗi nằm ở đâu nếu cần debug.</p>
+        </div>
+        <div class="workflow">
+          <div class="pipeline">
+            <div class="step">
+              <span class="step-index">1</span>
+              <div><strong>Proxy + Metadata</strong><br><small>Nén video, đọc thông tin định dạng.</small></div>
+              <span class="step-state">done</span>
+            </div>
+            <div class="step">
+              <span class="step-index">2</span>
+              <div><strong>Transcript + Scene Detect</strong><br><small>Khớp thoại vào từng cảnh quay.</small></div>
+              <span class="step-state">done</span>
+            </div>
+            <div class="step">
+              <span class="step-index">3</span>
+              <div><strong>AI Full + Clip Find</strong><br><small>Viết recap và chọn cảnh đắt giá.</small></div>
+              <span class="step-state">done</span>
+            </div>
+            <div class="step">
+              <span class="step-index">4</span>
+              <div><strong>Voice + Render Plan</strong><br><small>Tạo giọng đọc, phụ đề, kế hoạch dựng.</small></div>
+              <span class="step-state">review</span>
+            </div>
+          </div>
+
+          <div class="card review-mock">
+            <div class="segment">
+              <div class="segment-title"><span>Phân đoạn #1</span><span>Cảnh chọn: 5.72s</span></div>
+              <p class="segment-text">Chị đẹp Mai Lâm hóa trang thành ăn mày cực suy để tiếp cận kiệu vương gia.</p>
+              <div class="segment-actions">
+                <span class="pill">Nghe thử</span>
+                <span class="pill">Chọn cảnh</span>
+                <span class="pill">Tự khớp</span>
+              </div>
+            </div>
+            <div class="segment">
+              <div class="segment-title"><span>Phân đoạn #2</span><span class="step-state">Thiếu 0.00s</span></div>
+              <p class="segment-text">Ú òa chưa, chưa kịp động thủ đã bị cản về gạt giò không chế luôn!</p>
+              <div class="segment-actions">
+                <span class="pill">Phân tích lại</span>
+                <span class="pill">Nghỉ sau câu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="site-shell section">
+        <div class="section-head">
+          <h2>Giá rõ ràng, license gọn.</h2>
+          <p>Chọn gói phù hợp trước khi bắt đầu. Mỗi license dùng cho 1 máy để tránh share key lung tung.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card featured-price">
+            <div class="price-badge">Khuyên dùng</div>
+            <h3>License trọn đời</h3>
+            <p class="price">899K</p>
+            <p class="price-note">Thanh toán một lần, dùng lâu dài trên 1 máy đã kích hoạt.</p>
+            <ul>
+              <li>Kích hoạt online nhanh.</li>
+              <li>Dùng đầy đủ workflow recap.</li>
+              <li>Hỗ trợ OmniVoice local/LAN.</li>
+              <li>Phù hợp creator làm video thường xuyên.</li>
+            </ul>
+            <a class="btn btn-primary" href="https://fb.com/kentjuno">Liên hệ mua license</a>
+          </article>
+          <article class="price-card">
+            <div class="price-badge mini-badge">Test nhanh</div>
+            <h3>Pass 7 ngày</h3>
+            <p class="price">100K</p>
+            <p class="price-note">Dành cho ai muốn test nhanh trên máy thật trước khi chọn gói dài hơn.</p>
+            <ul>
+              <li>License 7 ngày cho 1 máy.</li>
+              <li>Phù hợp test cấu hình, CUDA, OmniVoice và workflow cơ bản.</li>
+              <li>Không được trừ vào lifetime nếu mua sau.</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://fb.com/kentjuno">Mua pass 7 ngày</a>
+          </article>
+          <article class="price-card">
+            <div class="price-badge secondary-badge">Dùng thử</div>
+            <h3>Trial 30 ngày</h3>
+            <p class="price">400K</p>
+            <p class="price-note">Trải nghiệm workflow thực tế trong 30 ngày. Nếu nâng lên trọn đời trong thời gian trial, 400K được trừ 100% vào gói lifetime.</p>
+            <ul>
+              <li>License 30 ngày cho 1 máy.</li>
+              <li>Phù hợp test máy, test workflow, test chất lượng voice.</li>
+              <li>Nâng lifetime chỉ cần trả thêm 499K trong thời gian trial.</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://fb.com/kentjuno">Nhận bản dùng thử</a>
+          </article>
+        </div>
+        <div class="community-strip">
+          <div>
+            <strong>Tham gia nhóm kín Facebook</strong>
+            <span>Nhận hướng dẫn, cập nhật build mới, case study recap và ưu đãi đặc biệt cho thành viên. License vẫn được Kent Juno cấp chính thức sau khi xác nhận thanh toán.</span>
+          </div>
+          <div class="community-actions">
+            <a class="btn btn-orange" href="https://www.facebook.com/groups/kja.ivibecodetutien" target="_blank" rel="noreferrer">Vào group kín</a>
+            <a class="btn btn-secondary" href="https://www.facebook.com/kentjuno/supporters/?entrypoint_surface=DIRECTORY&surface=directory" target="_blank" rel="noreferrer">Sub supporter</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="download" class="site-shell section">
+        <div class="download-panel">
+          <div>
+            <div class="eyebrow">Public build checklist</div>
+            <h2>Tải app khi bản public sẵn sàng.</h2>
+            <p class="hero-copy">
+              Bản đầu tiên sẽ dùng license online, 1 key cho 1 máy. Windows SmartScreen có thể cảnh báo vì app chưa code-sign bằng certificate thương mại.
+            </p>
+            <div class="button-row">
+              <a id="download-waitlist" class="btn btn-orange" href="#pricing">Chọn gói license</a>
+              <a class="btn btn-secondary" href="#docs">Đọc hướng dẫn trước</a>
+            </div>
+          </div>
+          <aside class="release-box">
+            <h3>Release info</h3>
+            <p>Version: cập nhật sau khi build installer public.</p>
+            <p>File: <code>MovieRecapTool_Setup_vX.X.X.exe</code></p>
+            <div class="checksum">
+              <span>SHA256: pending-public-build</span>
+              <button class="copy-btn" data-copy="pending-public-build">Copy</button>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="docs" class="site-shell section">
+        <div class="section-head">
+          <h2>Hướng dẫn cần biết.</h2>
+          <p>Viết cho người dùng cuối: mở app, nhập license, kích hoạt GPU cho Whisper nếu dùng NVIDIA, chạy OmniVoice, đổi server khi cần.</p>
+        </div>
+        <div class="grid-2">
+          <article class="doc-card">
+            <h3>Kích hoạt GPU cho Whisper</h3>
+            <ul>
+              <li>Nếu máy có card NVIDIA, hãy cập nhật driver NVIDIA trước và kiểm tra bằng <code>nvidia-smi</code>.</li>
+              <li>Mở MovieRecapTool. Nếu thấy banner vàng <code>Phát hiện card NVIDIA nhưng chưa kích hoạt CUDA/cuDNN</code>, bấm <code>Kích hoạt GPU (Tải tự động)</code>.</li>
+              <li>App sẽ tải thư viện <code>nvidia-cublas-cu12</code> và <code>nvidia-cudnn-cu12</code>, rồi cài DLL cần thiết cho Whisper/faster-whisper.</li>
+              <li>Nếu không bấm được trong app, mở thư mục cài đặt và chạy <code>activate_gpu.bat</code> cùng cấp với <code>main.exe</code>.</li>
+              <li>Sau khi kích hoạt xong, hãy tắt app và mở lại để Whisper nhận GPU.</li>
+            </ul>
+            <div class="button-row compact-row">
+              <a class="btn btn-secondary" href="https://www.nvidia.com/Download/index.aspx" target="_blank" rel="noreferrer">Tải NVIDIA Driver</a>
+              <a class="btn btn-secondary" href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="noreferrer">CUDA Toolkit nếu cần</a>
+            </div>
+          </article>
+          <article class="doc-card">
+            <h3>Kích hoạt license</h3>
+            <ul>
+              <li>Mở app sau khi cài.</li>
+              <li>Nhập license dạng <code>MR-XXXX-XXXX-XXXX</code>.</li>
+              <li>Mỗi license bind với 1 máy để tránh share key lung tung.</li>
+              <li>Sau khi activate, app có thể offline ngắn hạn và tự refresh khi có mạng.</li>
+            </ul>
+          </article>
+          <article class="doc-card">
+            <h3>Chạy OmniVoice local</h3>
+            <ul>
+              <li>Mở thư mục <code>omnivoice-api-server</code> đi kèm.</li>
+              <li>Lần đầu chạy <code>setup_and_run.bat</code>.</li>
+              <li>Các lần sau chạy <code>run.bat</code> trước khi render voice.</li>
+              <li>URL mặc định trong app: <code>http://127.0.0.1:8088/v1/tts</code>.</li>
+            </ul>
+          </article>
+          <article class="doc-card">
+            <h3>Đổi OmniVoice server</h3>
+            <p>Nếu OmniVoice chạy trên máy khác, mở app và vào <code>CẤU HÌNH API & OMNIVOICE</code>.</p>
+            <code class="code-line">http://IP_MAY_CHAY_OMNI:8088/v1/tts</code>
+          </article>
+          <article class="doc-card">
+            <h3>Cho phép LAN</h3>
+            <p>Trên máy chạy OmniVoice, set host trước khi chạy server nếu muốn máy khác truy cập.</p>
+            <code class="code-line">set OMNIVOICE_HOST=0.0.0.0</code>
+          </article>
+        </div>
+      </section>
+
+      <section id="policy" class="site-shell section">
+        <div class="section-head">
+          <h2>Chính sách rõ trước khi mua.</h2>
+          <p>Tool đang bán theo hướng creator thực chiến: giá gọn, license rõ, hỗ trợ chính qua Kent Juno và cộng đồng kín.</p>
+        </div>
+        <div class="grid-3">
+          <article class="doc-card policy-card">
+            <h3>Hỗ trợ</h3>
+            <ul>
+              <li>Hỗ trợ chính bởi Kent Juno qua Facebook và group kín.</li>
+              <li>Group kín dành cho thành viên đã sub supporter.</li>
+              <li>Ưu tiên hỗ trợ lỗi kích hoạt, lỗi cài đặt, lỗi Whisper/CUDA, OmniVoice và workflow render.</li>
+              <li>Người bán lại có thể hỗ trợ cài đặt cơ bản, nhưng license chính vẫn do Kent Juno cấp.</li>
+            </ul>
+          </article>
+          <article class="doc-card policy-card danger-policy">
+            <h3>Không hoàn tiền</h3>
+            <ul>
+              <li>Không hoàn tiền với bất kỳ lý do nào sau khi license đã được cấp hoặc kích hoạt.</li>
+              <li>Vui lòng dùng gói <code>100K / 7 ngày</code> hoặc <code>400K / 30 ngày</code> để test máy trước khi mua lifetime.</li>
+              <li>Gói 30 ngày được trừ 100% vào lifetime trong thời gian trial.</li>
+              <li>Gói 7 ngày không được trừ vào lifetime.</li>
+            </ul>
+          </article>
+          <article class="doc-card policy-card">
+            <h3>License & đổi máy</h3>
+            <ul>
+              <li>1 license dùng cho 1 máy đã kích hoạt.</li>
+              <li>Không share key, không dùng chung nhiều máy.</li>
+              <li>Nếu cần đổi máy, liên hệ Kent Juno để xem xét reset theo từng trường hợp.</li>
+              <li>Cần internet khi kích hoạt và khi app refresh license định kỳ.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="support" class="site-shell section">
+        <div class="section-head">
+          <h2>FAQ trước khi nhắn hỗ trợ.</h2>
+          <p>Các lỗi phổ biến nhất khi app mới cài: SmartScreen, voice server chưa chạy, license khác máy.</p>
+        </div>
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3>Windows báo SmartScreen thì sao?</h3>
+            <p>Bản hiện tại chưa code-sign bằng certificate thương mại, nên Windows có thể hiện cảnh báo lần đầu. Chọn <code>More info</code> rồi <code>Run anyway</code> nếu bạn tải từ link chính thức.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Không có phụ đề thì dùng được không?</h3>
+            <p>Dùng được. MovieRecapTool có thể dùng Whisper để trích xuất lời thoại từ audio của phim. Nếu có sẵn file SRT chuẩn thì nên nhập vào để tiết kiệm thời gian phân tích.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Có cần chạy OmniVoice trước không?</h3>
+            <p>Có. Trước khi render giọng đọc, hãy mở <code>omnivoice-api-server</code> và chạy <code>run.bat</code>. Nếu OmniVoice chạy ở máy khác, vào <code>CẤU HÌNH API & OMNIVOICE</code> trong app để đổi URL server.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Máy không có NVIDIA GPU có dùng được không?</h3>
+            <p>Có, nhưng sẽ rất chậm, đặc biệt ở bước Whisper lấy phụ đề và các bước xử lý AI/audio. Nếu làm recap thường xuyên, nên dùng máy có NVIDIA GPU và đã kích hoạt GPU trong app.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Whisper báo thiếu CUDA dù máy đã có CUDA?</h3>
+            <p>CUDA/driver trên Windows chưa đủ. MovieRecapTool còn cần DLL cuBLAS/cuDNN cho faster-whisper. Hãy bấm <code>Kích hoạt GPU (Tải tự động)</code> trong app hoặc chạy <code>activate_gpu.bat</code> trong thư mục cài đặt, sau đó mở lại app.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Render ra tiếng "te te" hoặc không gọi OmniVoice?</h3>
+            <p>Thường là OmniVoice server chưa chạy hoặc URL sai. Mở <code>CẤU HÌNH API & OMNIVOICE</code>, kiểm tra URL, rồi chạy lại server.</p>
+          </article>
+          <article class="faq-item">
+            <h3>License nhập ở máy khác được không?</h3>
+            <p>Mỗi license được bind với 1 máy sau lần kích hoạt đầu tiên. Nếu cần đổi máy, liên hệ admin để xử lý.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Trial 30 ngày nâng lên lifetime có được trừ tiền không?</h3>
+            <p>Có. Nếu nâng lên lifetime trong thời gian trial 30 ngày, 400K trial được trừ 100%, bạn chỉ cần trả thêm 499K. Khi nâng cấp, nhắn Facebook Kent Juno kèm license hoặc thông tin mua trial để được cấp/nâng license chính thức.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Pass 7 ngày có được trừ vào lifetime không?</h3>
+            <p>Không. Gói 100K / 7 ngày chỉ dùng để test nhanh máy và workflow, mặc định không được trừ vào lifetime nếu mua sau.</p>
+          </article>
+        </div>
+        <div class="button-row">
+          <a class="btn btn-primary" href="https://fb.com/kentjuno">Liên hệ Kent Juno</a>
+          <a class="btn btn-orange" href="https://www.facebook.com/groups/kja.ivibecodetutien" target="_blank" rel="noreferrer">Tham gia nhóm kín</a>
+          <a class="btn btn-secondary" href="https://www.facebook.com/kentjuno/supporters/?entrypoint_surface=DIRECTORY&surface=directory" target="_blank" rel="noreferrer">Sub để vào group</a>
+          <a class="btn btn-secondary" href="#download">Quay lại download</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-shell footer">
+      <span>© <span data-year></span> Kent Juno. MovieRecapTool.</span>
+      <span>Built for <code>recap.kentjuno.com</code> on Cloudflare Pages.</span>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
