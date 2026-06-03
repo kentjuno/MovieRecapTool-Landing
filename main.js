@@ -35,3 +35,19 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
 document.querySelectorAll("[data-year]").forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
+
+// Switch CLI installer tabs
+document.querySelectorAll("[data-tab-target]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const parent = button.closest(".cli-installer-tabs");
+    if (!parent) return;
+    parent.querySelectorAll(".cli-tab-btn").forEach((b) => b.classList.remove("active"));
+    parent.querySelectorAll(".cli-tab-content").forEach((c) => c.classList.remove("active"));
+    
+    button.classList.add("active");
+    const target = parent.querySelector(button.getAttribute("data-tab-target"));
+    if (target) {
+      target.classList.add("active");
+    }
+  });
+});
