@@ -30,6 +30,7 @@
     </a>
     <nav class="nav" aria-label="Primary navigation">
       <a data-nav href="#features">Tính năng</a>
+      <a data-nav href="#modes">Chế độ</a>
       <a data-nav href="#workflow">Workflow</a>
       <a data-nav href="#pricing">Giá</a>
       <a data-nav href="#download">Download</a>
@@ -44,10 +45,9 @@
     <section class="site-shell hero">
       <div class="reveal">
         <div class="eyebrow">recap.kentjuno.com / desktop creator tool</div>
-        <h1>Recap phim nhanh hơn, gọn hơn, ít lệch voice hơn.</h1>
+        <h1>Dựng video recap và thuyết minh phim tự động, chuyên nghiệp.</h1>
         <p class="hero-copy">
-          MovieRecapTool phân tích phim và phụ đề, chọn cảnh, viết kịch bản recap,
-          tạo giọng đọc bằng OmniVoice, rồi cho bạn review timeline trước khi xuất video.
+          MovieRecapTool giúp creator tự động hóa pipeline: viết kịch bản recap phim hoặc dịch thuật/lồng tiếng toàn bộ phim (Dubbing Mode), sinh giọng đọc AI tự nhiên bằng OmniVoice, tự động ghép cảnh và đồng bộ phụ đề.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#pricing">Xem giá</a>
@@ -71,12 +71,20 @@
 
       <div class="app-frame reveal delay-1" aria-label="MovieRecapTool interface mockup">
         <div class="window-bar">
-          <span>Movie Recap Tool - Phase 1 MVP</span>
+          <span>MovieRecapTool - v1.1.3</span>
           <span class="window-dots"><span></span><span></span><span></span></span>
         </div>
         <div class="mock-ui">
-          <div class="mock-title">CẤU HÌNH TẠO VIDEO TÓM TẮT PHIM</div>
+          <div class="mock-title">CẤU HÌNH TẠO VIDEO & THUYẾT MINH PHIM</div>
           <div class="mock-form">
+            <div class="mock-row">
+              <span>Chế độ chạy:</span>
+              <div style="display: flex; gap: 8px;">
+                <span class="mock-tab active" style="padding: 4px 10px; margin: 0; min-height: auto; font-size: 11px;">Tóm tắt (Recap)</span>
+                <span class="mock-tab" style="padding: 4px 10px; margin: 0; min-height: auto; font-size: 11px;">Thuyết minh (Dubbing)</span>
+              </div>
+              <span></span>
+            </div>
             <div class="mock-row">
               <span>Video gốc:</span>
               <span class="mock-input">Đường dẫn đến file video gốc...</span>
@@ -104,9 +112,9 @@
               <span class="mock-select">youtube_16_9</span>
               <span class="mock-select">Anti-Copyright cuts</span>
             </div>
-            <div class="mock-script">female, moderate pitch, dramatic recap tone</div>
+            <div class="mock-script">female, moderate pitch, dramatic tone</div>
           </div>
-          <div class="mock-main-btn">BẮT ĐẦU PHÂN TÍCH PHIM</div>
+          <div class="mock-main-btn">BẮT ĐẦU XỬ LÝ PHIM</div>
         </div>
       </div>
     </section>
@@ -133,6 +141,37 @@
           <span class="card-kicker">03 / Sync</span>
           <h3>Review cảnh và voice</h3>
           <p>Chọn lại cảnh, nghe thử giọng đọc, chỉnh khoảng nghỉ, rồi mới duyệt xuất video cuối.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="modes" class="site-shell section" style="border-top: 1px solid var(--line); padding-top: 72px;">
+      <div class="section-head">
+        <h2>Recap hay Thuyết minh? Tool cân cả hai.</h2>
+        <p>Linh hoạt lựa chọn giữa hai chế độ xử lý để tạo ra nội dung phù hợp nhất cho kênh của bạn.</p>
+      </div>
+      <div class="grid-2">
+        <article class="card reveal" style="border-color: rgba(50, 199, 189, 0.35); background: radial-gradient(circle at top right, rgba(50, 199, 189, 0.08), transparent 40%), rgba(255, 255, 255, 0.045);">
+          <span class="card-kicker">Mode 01 / Short & Dynamic</span>
+          <h3>Chế độ Recap Phim (Movie Recap)</h3>
+          <p>Tối ưu cho các video tóm tắt phim ngắn 10-20 phút, video TikTok/Reels triệu view.</p>
+          <ul style="color: var(--muted); padding-left: 20px; font-size: 14.5px; margin-top: 12px; line-height: 1.8;">
+            <li><strong>Phân tích cốt truyện:</strong> AI tự đọc phụ đề và hiểu mạch phim để soạn thảo kịch bản kể chuyện cô đọng, cuốn hút.</li>
+            <li><strong>Tìm cảnh quay thông minh:</strong> Tự động lọc ra các cảnh quay đắt giá trong phim khớp với câu thoại của kịch bản recap.</li>
+            <li><strong>Review & Căn chỉnh:</strong> Nghe thử giọng đọc, căn chỉnh thời lượng khoảng nghỉ và thay thế cảnh quay trực quan.</li>
+            <li><strong>Tạo giọng đọc cuốn hút:</strong> Hỗ trợ các giọng đọc mang phong cách kể chuyện kịch tính, lôi cuốn người xem.</li>
+          </ul>
+        </article>
+        <article class="card reveal delay-1" style="border-color: rgba(255, 137, 8, 0.35); background: radial-gradient(circle at top right, rgba(255, 137, 8, 0.08), transparent 40%), rgba(255, 255, 255, 0.045);">
+          <span class="card-kicker">Mode 02 / Full Experience</span>
+          <h3>Chế độ Dịch & Thuyết minh (Movie Dubbing)</h3>
+          <p>Dịch thuật và thuyết minh tự động cho toàn bộ phim dài (full movie) nhưng vẫn giữ nguyên âm thanh gốc.</p>
+          <ul style="color: var(--muted); padding-left: 20px; font-size: 14.5px; margin-top: 12px; line-height: 1.8;">
+            <li><strong>Dịch thuật giữ sắc thái:</strong> Dịch trực tiếp từ phụ đề gốc của phim, tối ưu ngữ điệu phù hợp văn hóa Việt Nam.</li>
+            <li><strong>Đồng bộ timeline:</strong> Giọng đọc thuyết minh AI tự động khớp chuẩn xác theo thời gian thoại gốc của từng nhân vật.</li>
+            <li><strong>Tách và dìm âm nền (Ducking):</strong> Tự động dìm nhỏ giọng nhân vật gốc khi thuyết minh nói, giữ nguyên nhạc nền và hiệu ứng (SFX).</li>
+            <li><strong>Thuyết minh đa dạng:</strong> Cho phép gán các giọng thuyết minh AI chuyên nghiệp khác nhau cho phim hoặc gán theo nhân vật.</li>
+          </ul>
         </article>
       </div>
     </section>
@@ -270,12 +309,12 @@
         </div>
         <aside class="release-box">
           <h3>Release info</h3>
-          <p>Version: 1.1.1 (Bản chính thức)</p>
-          <p>File: <code>MovieRecapTool_Setup_v1.1.1.zip</code></p>
+          <p>Version: 1.1.3 (Bản chính thức)</p>
+          <p>File: <code>MovieRecapTool_Setup_v1.1.3.zip</code></p>
           <div class="checksum" style="font-size: 11px;">
-            <span>SHA256: 6DF568EBA7608A5BDC198253EBCF52938863C92AE1C3F8B5BE54B3A3F90CD3B9</span>
+            <span>SHA256: EB435BB8546D82FF8CB66BBF85A31F1F162E62465C59113D0AA8156C911781B5</span>
             <button class="copy-btn"
-              data-copy="6DF568EBA7608A5BDC198253EBCF52938863C92AE1C3F8B5BE54B3A3F90CD3B9">Copy</button>
+              data-copy="EB435BB8546D82FF8CB66BBF85A31F1F162E62465C59113D0AA8156C911781B5">Copy</button>
           </div>
         </aside>
       </div>
@@ -369,47 +408,32 @@
           <!-- Bước 1 -->
           <div class="setup-step-card reveal">
             <div class="step-num">01</div>
-            <h3>Bước 1 - Cài đặt OmniVoice API Server</h3>
-            <p>Môi trường thuyết minh giọng nói cục bộ (chạy offline trực tiếp trên máy hoặc mạng LAN của bạn).</p>
+            <h3>Bước 1 - Cập nhật Driver NVIDIA & Cài CUDA Toolkit</h3>
+            <p>Yêu cầu tối quan trọng để tăng tốc phần cứng (GPU) cho Whisper (nhận diện giọng nói nhanh gấp 10-20 lần CPU) và xử lý video.</p>
 
             <div class="step-action-box" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px;">
-              <a class="btn btn-primary"
-                href="https://github.com/kentjuno/omnivoice-api-server/archive/refs/heads/main.zip" target="_blank"
+              <a class="btn btn-secondary" href="https://www.nvidia.com/Download/index.aspx" target="_blank"
                 rel="noreferrer">
-                <span>📥 Tải trực tiếp file ZIP (Khuyên dùng)</span>
+                <span>🌐 Tải NVIDIA Driver mới nhất</span>
               </a>
-              <a class="link-btn" href="https://github.com/kentjuno/omnivoice-api-server" target="_blank"
-                rel="noreferrer" style="align-self: center;">
-                <span>Xem mã nguồn trên GitHub</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
+              <a class="btn btn-secondary" href="https://developer.nvidia.com/cuda-downloads" target="_blank"
+                rel="noreferrer">
+                <span>🛠️ Tải CUDA Toolkit</span>
               </a>
             </div>
 
             <div class="step-details" style="margin-top: 16px;">
               <ul>
-                <li><strong>Cách tải dễ nhất:</strong> Click vào nút <strong>"Tải trực tiếp file ZIP"</strong> màu xanh
-                  ở trên. File zip chứa toàn bộ server sẽ được tự động tải xuống máy tính của bạn ngay lập tức.</li>
-                <li>Nếu bạn click vào liên kết xem trên GitHub, hãy chọn nút <strong>Code</strong> màu xanh lá cây ở góc
-                  phải rồi click <strong>Download ZIP</strong> như hình minh họa bên dưới để tải về máy:
-                  <div
-                    style="margin-top: 12px; max-width: 420px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line);">
-                    <img src="assets/github-download-zip.png" alt="Hướng dẫn tải ZIP từ GitHub"
-                      style="width: 100%; display: block;">
-                  </div>
+                <li><strong>NVIDIA Driver:</strong> Đảm bảo máy tính của bạn đã cập nhật Driver card đồ họa NVIDIA mới nhất từ link chính thức bên trên.</li>
+                <li><strong>CUDA Toolkit:</strong> Tải và cài đặt CUDA Toolkit phiên bản mới nhất. Khi cài đặt, hãy chọn cài đặt mặc định (Express Install).</li>
+                <li><strong>Kích hoạt thư viện CUDA/cuDNN cho Whisper:</strong>
+                  <ul>
+                    <li>Khởi chạy MovieRecapTool, ứng dụng sẽ quét hệ thống và hiển thị Banner màu vàng ở màn hình đầu tiên: <em>"Phát hiện card NVIDIA nhưng chưa kích hoạt CUDA/cuDNN"</em>.</li>
+                    <li>Nhấp vào nút <strong>"Kích hoạt GPU (Tải tự động)"</strong> bên cạnh để ứng dụng tự động tải về cuBLAS & cuDNN (dung lượng ~270MB), giải nén và kích hoạt GPU hoàn hảo.</li>
+                    <li>Nếu trong app gặp lỗi mạng không tải được, hãy vào thư mục cài đặt ứng dụng và click đúp vào file <strong><code>activate_gpu.bat</code></strong> để chạy kích hoạt thủ công.</li>
+                    <li>Sau khi kích hoạt xong, hãy tắt và khởi động lại ứng dụng để Whisper nhận dạng và hoạt động trên GPU NVIDIA.</li>
+                  </ul>
                 </li>
-                <li>Sau khi tải xong, nhấp chuột phải vào file <code>omnivoice-api-server-main.zip</code> và chọn
-                  <strong>Extract All (Giải nén tất cả)</strong> ra một thư mục.
-                </li>
-                <li><strong>Lần đầu chạy:</strong> Nhấp đúp (Double-click) vào file <code>setup_and_run.bat</code> trong
-                  thư mục vừa giải nén để tự động tải các gói mô hình giọng nói AI và cấu hình môi trường. (Quá trình
-                  này chạy tự động hoàn toàn, bạn chỉ cần đợi cửa sổ chạy xong).</li>
-                <li><strong>Các lần chạy sau:</strong> Chỉ cần nhấp đúp file <code>run.bat</code> để bật API Server lên
-                  trước khi mở tool recap phim.</li>
               </ul>
             </div>
           </div>
@@ -417,7 +441,59 @@
           <!-- Bước 2 -->
           <div class="setup-step-card reveal">
             <div class="step-num">02</div>
-            <h3>Bước 2 - Cài đặt Antigravity CLI</h3>
+            <h3>Bước 2 - Tải ứng dụng MovieRecapTool</h3>
+            <p>Tải về gói cài đặt chính thức của MovieRecapTool.</p>
+
+            <div class="step-action-box" style="margin-top: 12px;">
+              <a class="btn btn-primary" href="#download">Tới phần tải ứng dụng</a>
+            </div>
+
+            <div class="step-details">
+              <ul>
+                <li>Cuộn lên phần <strong>Download</strong> bên trên hoặc liên hệ trực tiếp Kent Juno để nhận file ZIP bản dựng mới nhất.</li>
+                <li>Giải nén tệp tin đã tải về máy tính của bạn.</li>
+                <li>Nếu bạn dùng bản Setup, click đúp file cài đặt (ví dụ: <code>MovieRecapTool_Setup_v1.1.3.exe</code>) để tiến hành cài đặt.</li>
+                <li><em>Mẹo: Windows SmartScreen có thể hiện cảnh báo "Unknown Publisher" vì ứng dụng chưa ký số thương mại. Bấm <strong>"More info"</strong> rồi chọn <strong>"Run anyway"</strong> để cho phép chạy.</em></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bước 3 -->
+          <div class="setup-step-card reveal">
+            <div class="step-num">03</div>
+            <h3>Bước 3 - Cài đặt OmniVoice API Server tự động qua GUI</h3>
+            <p>Môi trường thuyết minh giọng nói cục bộ (chạy offline trực tiếp trên máy hoặc mạng LAN của bạn) đã được tích hợp sẵn trong bộ cài app.</p>
+            <div class="step-details" style="margin-top: 16px;">
+              <ul>
+                <li><strong>Cách cài đặt khuyên dùng (Tự động hoàn toàn):</strong>
+                  <ul>
+                    <li>Khi bạn mở ứng dụng <strong>MovieRecapTool</strong> lần đầu tiên, hệ thống sẽ tự động quét và phát hiện trạng thái cài đặt của OmniVoice.</li>
+                    <li>Hộp thoại cài đặt tự động sẽ xuất hiện. Bạn chỉ cần chọn phiên bản <strong>CUDA</strong> phù hợp với card đồ họa NVIDIA của máy (Ví dụ: <code>cu121</code> nếu dùng RTX 30/40 series, <code>cu118</code> cho các dòng card cũ hơn, hoặc <code>CPU</code> nếu máy không có card rời NVIDIA).</li>
+                    <li>Nhấn nút <strong>"Cài đặt tự động"</strong>. Ứng dụng sẽ tự động tải các gói thư viện PyTorch CUDA, khởi tạo môi trường ảo (<code>venv</code>), tải các mô hình giọng nói AI chất lượng cao từ Hugging Face (~1.5GB) và hoàn tất cấu hình hoàn toàn ngầm.</li>
+                    <li>Sau khi cài đặt xong, máy chủ lồng tiếng sẽ <strong>tự động khởi chạy</strong> ngầm mỗi khi bạn mở ứng dụng chính. Bạn không cần làm thêm bất kỳ thao tác dòng lệnh phức tạp nào.</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <!-- Mục nâng cao thu gọn cho bat file -->
+              <details style="margin-top: 18px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(0,0,0,0.18);">
+                <summary style="font-weight: 700; cursor: pointer; color: var(--teal-2);">⚙️ Hướng dẫn Cài đặt & Chạy thủ công (Troubleshooting / LAN Server)</summary>
+                <div style="margin-top: 10px; font-size: 14px; line-height: 1.6;">
+                  <p>Nếu bạn gặp sự cố mạng khi cài tự động, hoặc muốn thiết lập máy chủ OmniVoice độc lập chạy trên một máy tính khác trong mạng LAN:</p>
+                  <ol style="padding-left: 20px; margin-top: 8px;">
+                    <li><strong>Chuẩn bị mã nguồn:</strong> Vào thư mục cài đặt ứng dụng MovieRecapTool, tìm thư mục con <code>omnivoice-api-server</code>. (Hoặc bạn có thể tải mã nguồn trực tiếp từ <a href="https://github.com/kentjuno/omnivoice-api-server" target="_blank" rel="noreferrer" style="color: var(--teal); text-decoration: underline;">GitHub Repository</a>).</li>
+                    <li><strong>Cài đặt thủ công:</strong> Nhấp đúp vào file <code>setup_and_run.bat</code> để chạy trình cài đặt thủ công. Cửa sổ Command Prompt sẽ hiển thị đầy đủ tiến trình tải thư viện, giúp bạn dễ dàng theo dõi lỗi mạng hoặc cấu hình nếu có.</li>
+                    <li><strong>Chạy thủ công:</strong> Trong các lần sử dụng sau, nếu muốn chạy độc lập không qua app, chỉ cần chạy file <code>run.bat</code> để bật máy chủ API lên. Cổng chạy mặc định là <code>8088</code>.</li>
+                  </ol>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Bước 4 -->
+          <div class="setup-step-card reveal">
+            <div class="step-num">04</div>
+            <h3>Bước 4 - Cài đặt Antigravity CLI</h3>
             <p>Công cụ dòng lệnh CLI để xác thực và kích hoạt môi trường trí tuệ nhân tạo Google Pro.</p>
 
             <div class="cli-installer-tabs">
@@ -454,86 +530,13 @@
 
               <p><strong>Hướng dẫn đăng nhập tài khoản Google Pro/Ultra chi tiết từng bước:</strong></p>
               <ol style="margin-top: 8px;">
-                <li>Sau khi gõ <code>agy</code> và bấm Enter, màn hình CMD sẽ hiển thị một <strong>đường link xác
-                    thực</strong> kèm theo mã thiết bị.</li>
-                <li><strong>Bôi đen đường link đó (NHỚ BÔI ĐEN TOÀN BỘ ĐỦ ĐƯỜNG LINK BAO GỒM HTTPS:// Ở ĐẦU TỚI
-                    CUỐI!!!), nhấp chuột phải để Copy</strong> (trên
-                  Windows CMD, chỉ cần bôi đen rồi click chuột phải là máy sẽ tự copy). Dán link này vào trình duyệt web
-                  của bạn.</li>
-                <li>Tiến hành đăng nhập tài khoản Google của bạn trên trình duyệt (Khuyến nghị sử dụng tài khoản
-                  <strong>Google Pro hoặc Ultra</strong> trở lên để AI có hiệu năng phân tích kịch bản tốt nhất).
-                </li>
-                <li>Sau khi đăng nhập và cấp quyền thành công, trình duyệt sẽ trả về một <strong>mã code xác
-                    thực</strong>.</li>
-                <li><strong>Copy mã code đó, click chuột phải vào cửa sổ CMD để dán (paste)</strong> và nhấn
-                  <strong>Enter</strong> để hoàn tất liên kết tài khoản.
-                </li>
+                <li>Sau khi gõ <code>agy</code> và bấm Enter, màn hình CMD sẽ hiển thị một <strong>đường link xác thực</strong> kèm theo mã thiết bị.</li>
+                <li><strong>Bôi đen đường link đó (NHỚ BÔI ĐEN TOÀN BỘ ĐỦ ĐƯỜNG LINK BAO GỒM HTTPS:// Ở ĐẦU TỚI CUỐI!!!), nhấp chuột phải để Copy</strong> (trên Windows CMD, chỉ cần bôi đen rồi click chuột phải là máy sẽ tự copy). Dán link này vào trình duyệt web của bạn.</li>
+                <li>Tiến hành đăng nhập tài khoản Google của bạn trên trình duyệt (Khuyến nghị sử dụng tài khoản <strong>Google Pro hoặc Ultra</strong> trở lên để AI có hiệu năng phân tích kịch bản tốt nhất).</li>
+                <li>Sau khi đăng nhập và cấp quyền thành công, trình duyệt sẽ trả về một <strong>mã code xác thực</strong>.</li>
+                <li><strong>Copy mã code đó, click chuột phải vào cửa sổ CMD để dán (paste)</strong> và nhấn <strong>Enter</strong> để hoàn tất liên kết tài khoản.</li>
                 <li>Gõ thử 1 hoặc 2 câu chat bất kỳ để kiểm tra xem AI có phản hồi bình thường hay không.</li>
               </ol>
-            </div>
-          </div>
-
-          <!-- Bước 3 -->
-          <div class="setup-step-card reveal">
-            <div class="step-num">03</div>
-            <h3>Bước 3 - Tải ứng dụng MovieRecapTool</h3>
-            <p>Tải về gói cài đặt chính thức của MovieRecapTool.</p>
-
-            <div class="step-action-box" style="margin-top: 12px;">
-              <a class="btn btn-primary" href="#download">Tới phần tải ứng dụng</a>
-            </div>
-
-            <div class="step-details">
-              <ul>
-                <li>Cuộn lên phần <strong>Download</strong> bên trên hoặc liên hệ trực tiếp Kent Juno để nhận file ZIP
-                  bản dựng mới nhất.</li>
-                <li>Giải nén tệp tin đã tải về máy tính của bạn.</li>
-                <li>Nếu bạn dùng bản Setup, click đúp file cài đặt (ví dụ: <code>MovieRecapTool_Setup_v1.1.1.exe</code>)
-                  để tiến hành cài đặt.</li>
-                <li><em>Mẹo: Windows SmartScreen có thể hiện cảnh báo "Unknown Publisher" vì ứng dụng chưa ký số thương
-                    mại. Bấm <strong>"More info"</strong> rồi chọn <strong>"Run anyway"</strong> để cho phép chạy.</em>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Bước 4 -->
-          <div class="setup-step-card reveal">
-            <div class="step-num">04</div>
-            <h3>Bước 4 - Cập nhật Driver NVIDIA & Cài CUDA Toolkit</h3>
-            <p>Yêu cầu tối quan trọng để tăng tốc phần cứng (GPU) cho Whisper (nhận diện giọng nói nhanh gấp 10-20 lần
-              CPU) và xử lý video.</p>
-
-            <div class="step-action-box" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px;">
-              <a class="btn btn-secondary" href="https://www.nvidia.com/Download/index.aspx" target="_blank"
-                rel="noreferrer">
-                <span>🌐 Tải NVIDIA Driver mới nhất</span>
-              </a>
-              <a class="btn btn-secondary" href="https://developer.nvidia.com/cuda-downloads" target="_blank"
-                rel="noreferrer">
-                <span>🛠️ Tải CUDA Toolkit</span>
-              </a>
-            </div>
-
-            <div class="step-details" style="margin-top: 16px;">
-              <ul>
-                <li><strong>NVIDIA Driver:</strong> Đảm bảo máy tính của bạn đã cập nhật Driver card đồ họa NVIDIA mới
-                  nhất từ link chính thức bên trên.</li>
-                <li><strong>CUDA Toolkit:</strong> Tải và cài đặt CUDA Toolkit phiên bản mới nhất. Khi cài đặt, hãy chọn
-                  cài đặt mặc định (Express Install).</li>
-                <li><strong>Kích hoạt thư viện CUDA/cuDNN cho Whisper:</strong>
-                  <ul>
-                    <li>Khởi chạy MovieRecapTool, ứng dụng sẽ quét hệ thống và hiển thị Banner màu vàng ở màn hình đầu
-                      tiên: <em>"Phát hiện card NVIDIA nhưng chưa kích hoạt CUDA/cuDNN"</em>.</li>
-                    <li>Nhấp vào nút <strong>"Kích hoạt GPU (Tải tự động)"</strong> bên cạnh để ứng dụng tự động tải về
-                      cuBLAS & cuDNN (dung lượng ~270MB), giải nén và kích hoạt GPU hoàn hảo.</li>
-                    <li>Nếu trong app gặp lỗi mạng không tải được, hãy vào thư mục cài đặt ứng dụng và click đúp vào
-                      file <strong><code>activate_gpu.bat</code></strong> để chạy kích hoạt thủ công.</li>
-                    <li>Sau khi kích hoạt xong, hãy tắt và khởi động lại ứng dụng để Whisper nhận dạng và hoạt động trên
-                      GPU NVIDIA.</li>
-                  </ul>
-                </li>
-              </ul>
             </div>
           </div>
 
@@ -547,13 +550,9 @@
               <ul>
                 <li>Khởi động ứng dụng MovieRecapTool.</li>
                 <li>Ứng dụng sẽ hiển thị màn hình khóa yêu cầu nhập key.</li>
-                <li>Sao chép thông tin hiển thị trên màn hình bao gồm <strong>Email đăng ký</strong> và chuỗi
-                  <strong>License Request</strong>.
-                </li>
-                <li>Gửi các thông tin này cho anh Kent (Kent Juno) qua kênh hỗ trợ (ví dụ chat Facebook hoặc Telegram).
-                </li>
-                <li>Sau khi kích hoạt online trên server admin thành công, bạn sẽ nhận được License Key để nhập vào mở
-                  khóa ứng dụng hoàn toàn.</li>
+                <li>Sao chép thông tin hiển thị trên màn hình bao gồm <strong>Email đăng ký</strong> và chuỗi <strong>License Request</strong>.</li>
+                <li>Gửi các thông tin này cho anh Kent (Kent Juno) qua kênh hỗ trợ (ví dụ chat Facebook hoặc Telegram).</li>
+                <li>Sau khi kích hoạt online trên server admin thành công, bạn sẽ nhận được License Key để nhập vào mở khóa ứng dụng hoàn toàn.</li>
               </ul>
             </div>
           </div>
@@ -562,20 +561,18 @@
           <div class="setup-step-card reveal">
             <div class="step-num">06</div>
             <h3>Bước 6 - Sử dụng & Trải nghiệm</h3>
-            <p>Bắt đầu dựng video recap phim chuyên nghiệp của bạn.</p>
+            <p>Bắt đầu dựng video recap hoặc thuyết minh phim chuyên nghiệp của bạn.</p>
 
             <div class="step-details">
               <ul>
-                <li>Đảm bảo máy chủ <strong>OmniVoice API Server</strong> đã được khởi chạy thành công (cửa sổ
-                  <code>run.bat</code> đang mở).
-                </li>
-                <li>Mở ứng dụng <strong>MovieRecapTool</strong>, cấu hình đường dẫn video gốc, file phụ đề SRT (hoặc bật
-                  Whisper tự nhận diện thoại).</li>
-                <li>Chọn giọng nói thuyết minh (tự thiết kế hoặc dùng clone giọng mẫu).</li>
-                <li>Nhấn nút <strong>BẮT ĐẦU PHÂN TÍCH PHIM</strong> và theo dõi tiến trình chạy trực quan.</li>
+                <li>Khởi động ứng dụng <strong>MovieRecapTool</strong> (máy chủ <strong>OmniVoice API Server</strong> sẽ tự động được khởi chạy ngầm dưới nền).</li>
+                <li>Chọn <strong>Chế độ chạy</strong> mong muốn: <strong>Tóm tắt (Recap)</strong> hoặc <strong>Thuyết minh (Dubbing)</strong>.</li>
+                <li>Cấu hình đường dẫn video gốc, file phụ đề SRT (hoặc bật Whisper tự nhận diện lời thoại sang phụ đề).</li>
+                <li>Chọn giọng nói thuyết minh hoặc gán giọng đọc tương ứng.</li>
+                <li>Nhấn nút <strong>BẮT ĐẦU XỬ LÝ PHIM</strong> và theo dõi tiến trình chạy trực quan.</li>
               </ul>
             </div>
-            <div class="done-note">🎬 Thế là xong! Bắt đầu tạo những thước phim recap triệu view thôi 😎</div>
+            <div class="done-note">🎬 Thế là xong! Bắt đầu tạo những thước phim recap & thuyết minh đỉnh cao thôi 😎</div>
           </div>
         </div>
       </div>
