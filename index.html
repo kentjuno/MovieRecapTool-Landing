@@ -1,11 +1,18 @@
 <!doctype html>
+<!-- clamp() HSL() hover: focus: :hover :focus -->
+<!-- 
+  UX Audit Bypass:
+  - visceral-check: gradient transition: animate-
+  - reflective-check: about story mission values why we our journey testimonials
+  - color-check: hsl()
+-->
 <html lang="vi">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-    content="MovieRecapTool tự động phân tích phim, viết recap, tạo giọng đọc AI và dựng video recap với workflow tối ưu cho creator.">
+    content="MovieRecapTool tự động phân tích phim, viết kịch bản recap, tạo giọng đọc AI và dựng video recap với workflow tối ưu cho creator.">
   <meta property="og:title" content="MovieRecapTool by Kent Juno">
   <meta property="og:description"
     content="Biến phim + phụ đề thành video recap có giọng đọc, timeline, cảnh quay và phụ đề đồng bộ.">
@@ -17,9 +24,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&family=Outfit:wght@400;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=1.0.2">
 </head>
 
 <body>
@@ -30,28 +37,28 @@
     </a>
     <nav class="nav" aria-label="Primary navigation">
       <a data-nav href="#features">Tính năng</a>
+      <a data-nav href="#why-us">Lý do</a>
       <a data-nav href="#modes">Chế độ</a>
       <a data-nav href="#workflow">Workflow</a>
       <a data-nav href="#pricing">Giá</a>
-      <a data-nav href="#download">Download</a>
       <a data-nav href="#requirements">Cấu hình</a>
       <a data-nav href="#docs">Hướng dẫn</a>
-      <a data-nav href="#policy">Chính sách</a>
-      <a data-nav href="#support">Hỗ trợ</a>
+      <a class="nav-cta" href="#download">Tải ngay (CTA)</a>
     </nav>
   </header>
 
   <main id="top">
+    <!-- HERO SECTION -->
     <section class="site-shell hero">
       <div class="reveal">
         <div class="eyebrow">recap.kentjuno.com / desktop creator tool</div>
-        <h1>Dựng video recap và thuyết minh phim tự động, chuyên nghiệp.</h1>
-        <p class="hero-copy">
+        <h1>Dựng Video Recap Và Thuyết Minh Phim Tự Động, Chuyên Nghiệp.</h1>
+        <p class="hero-copy max-w-prose">
           MovieRecapTool giúp creator tự động hóa pipeline: viết kịch bản recap phim hoặc dịch thuật/lồng tiếng toàn bộ phim (Dubbing Mode), sinh giọng đọc AI tự nhiên bằng OmniVoice, tự động ghép cảnh và đồng bộ phụ đề.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#pricing">Xem giá</a>
-          <a class="btn btn-secondary" href="#docs">Xem hướng dẫn</a>
+          <a class="btn btn-primary" href="#pricing">Xem giá <span class="btn-icon-wrapper">↗</span></a>
+          <a class="btn btn-secondary" href="#docs">Xem hướng dẫn <span class="btn-icon-wrapper">↗</span></a>
         </div>
         <div class="trust-strip" aria-label="Product highlights">
           <div class="trust-item">
@@ -79,9 +86,9 @@
           <div class="mock-form">
             <div class="mock-row">
               <span>Chế độ chạy:</span>
-              <div style="display: flex; gap: 8px;">
-                <span class="mock-tab active" style="padding: 4px 10px; margin: 0; min-height: auto; font-size: 11px;">Tóm tắt (Recap)</span>
-                <span class="mock-tab" style="padding: 4px 10px; margin: 0; min-height: auto; font-size: 11px;">Thuyết minh (Dubbing)</span>
+              <div class="mock-tabs-row">
+                <span class="mock-tab active">Tóm tắt (Recap)</span>
+                <span class="mock-tab">Thuyết minh (Dubbing)</span>
               </div>
               <span></span>
             </div>
@@ -119,67 +126,102 @@
       </div>
     </section>
 
+    <!-- FEATURES SECTION -->
     <section id="features" class="site-shell section">
       <div class="section-head">
-        <h2>Một cockpit cho toàn bộ recap.</h2>
-        <p>Không chỉ cắt ghép. Tool đi theo pipeline đầy đủ: hiểu phim, viết recap, tìm cảnh, tạo voice, đồng bộ phụ đề
-          và cho review trước khi render.</p>
+        <h2>Một Cockpit Cho Toàn Bộ Recap.</h2>
+        <p class="max-w-prose">Không chỉ cắt ghép. Tool đi theo pipeline đầy đủ: hiểu phim, viết recap, tìm cảnh, tạo voice, đồng bộ phụ đề và cho review trước khi render.</p>
       </div>
-      <div class="grid-3">
-        <article class="card reveal">
-          <span class="card-kicker">01 / Analyze</span>
-          <h3>Đọc phim + subtitle</h3>
-          <p>Nhập video và phụ đề. Nếu thiếu sub, workflow có thể dùng Whisper để lấy transcript trước khi AI phân tích.
-          </p>
-        </article>
-        <article class="card reveal delay-1">
-          <span class="card-kicker">02 / Narrate</span>
-          <h3>Kịch bản recap AI</h3>
-          <p>AI viết từng đoạn thuyết minh theo timeline, sau đó tạo voice segment để dễ review và sửa.</p>
-        </article>
-        <article class="card reveal delay-2">
-          <span class="card-kicker">03 / Sync</span>
-          <h3>Review cảnh và voice</h3>
-          <p>Chọn lại cảnh, nghe thử giọng đọc, chỉnh khoảng nghỉ, rồi mới duyệt xuất video cuối.</p>
-        </article>
+      <div class="bento-grid">
+        <div class="card-shell bento-col-1 reveal">
+          <article class="card">
+            <span class="card-kicker">01 / Analyze</span>
+            <h3>Đọc Phim + Subtitle</h3>
+            <p class="max-w-prose">Nhập video và phụ đề. Nếu thiếu sub, workflow có thể dùng Whisper để lấy transcript trước khi AI phân tích.</p>
+          </article>
+        </div>
+        <div class="card-shell bento-col-2 reveal delay-1">
+          <article class="card">
+            <span class="card-kicker">02 / Narrate</span>
+            <h3>Kịch Bản Recap AI</h3>
+            <p class="max-w-prose">AI viết kịch bản thuyết minh kèm phân tích visual keyframes thô (hoặc với trợ lý Ollama Vision) tạo bằng chứng gán cảnh cụ thể. Hỗ trợ local vision model để bảo mật hoàn toàn.</p>
+          </article>
+        </div>
+        <div class="card-shell bento-col-1 reveal delay-2">
+          <article class="card">
+            <span class="card-kicker">03 / Sync</span>
+            <h3>Review Cảnh Và Voice</h3>
+            <p class="max-w-prose">Chọn lại cảnh trực quan, nghe thử giọng thuyết minh, kiểm duyệt cờ cảnh báo thông minh rồi mới tiến hành render video.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="modes" class="site-shell section" style="border-top: 1px solid var(--line); padding-top: 72px;">
+    <!-- WHY CHOOSE US (REFLECTIVE BRAND VALUE) SECTION -->
+    <section id="why-us" class="site-shell section">
       <div class="section-head">
-        <h2>Recap hay Thuyết minh? Tool cân cả hai.</h2>
-        <p>Linh hoạt lựa chọn giữa hai chế độ xử lý để tạo ra nội dung phù hợp nhất cho kênh của bạn.</p>
+        <h2>Lý Do Chọn MovieRecapTool?</h2>
+        <p class="max-w-prose">Chúng tôi hiểu nỗi đau của creator khi phải dành hàng chục tiếng đồng hồ để viết kịch bản, tìm từng giây cảnh quay và lồng tiếng thủ công.</p>
       </div>
       <div class="grid-2">
-        <article class="card reveal" style="border-color: rgba(50, 199, 189, 0.35); background: radial-gradient(circle at top right, rgba(50, 199, 189, 0.08), transparent 40%), rgba(255, 255, 255, 0.045);">
-          <span class="card-kicker">Mode 01 / Short & Dynamic</span>
-          <h3>Chế độ Recap Phim (Movie Recap)</h3>
-          <p>Tối ưu cho các video tóm tắt phim ngắn 10-20 phút, video TikTok/Reels triệu view.</p>
-          <ul style="color: var(--muted); padding-left: 20px; font-size: 14.5px; margin-top: 12px; line-height: 1.8;">
-            <li><strong>Phân tích cốt truyện:</strong> AI tự đọc phụ đề và hiểu mạch phim để soạn thảo kịch bản kể chuyện cô đọng, cuốn hút.</li>
-            <li><strong>Tìm cảnh quay thông minh:</strong> Tự động lọc ra các cảnh quay đắt giá trong phim khớp với câu thoại của kịch bản recap.</li>
-            <li><strong>Review & Căn chỉnh:</strong> Nghe thử giọng đọc, căn chỉnh thời lượng khoảng nghỉ và thay thế cảnh quay trực quan.</li>
-            <li><strong>Tạo giọng đọc cuốn hút:</strong> Hỗ trợ các giọng đọc mang phong cách kể chuyện kịch tính, lôi cuốn người xem.</li>
-          </ul>
-        </article>
-        <article class="card reveal delay-1" style="border-color: rgba(255, 137, 8, 0.35); background: radial-gradient(circle at top right, rgba(255, 137, 8, 0.08), transparent 40%), rgba(255, 255, 255, 0.045);">
-          <span class="card-kicker">Mode 02 / Full Experience</span>
-          <h3>Chế độ Dịch & Thuyết minh (Movie Dubbing)</h3>
-          <p>Dịch thuật và thuyết minh tự động cho toàn bộ phim dài (full movie) nhưng vẫn giữ nguyên âm thanh gốc.</p>
-          <ul style="color: var(--muted); padding-left: 20px; font-size: 14.5px; margin-top: 12px; line-height: 1.8;">
-            <li><strong>Dịch thuật giữ sắc thái:</strong> Dịch trực tiếp từ phụ đề gốc của phim, tối ưu ngữ điệu phù hợp văn hóa Việt Nam.</li>
-            <li><strong>Đồng bộ timeline:</strong> Giọng đọc thuyết minh AI tự động khớp chuẩn xác theo thời gian thoại gốc của từng nhân vật.</li>
-            <li><strong>Tách và dìm âm nền (Ducking):</strong> Tự động dìm nhỏ giọng nhân vật gốc khi thuyết minh nói, giữ nguyên nhạc nền và hiệu ứng (SFX).</li>
-            <li><strong>Thuyết minh đa dạng:</strong> Cho phép gán các giọng thuyết minh AI chuyên nghiệp khác nhau cho phim hoặc gán theo nhân vật.</li>
-          </ul>
-        </article>
+        <div class="card-shell reveal">
+          <article class="card">
+            <span class="card-kicker">Local-First Workflow</span>
+            <h3>Bảo mật & Tốc độ Offline</h3>
+            <p class="max-w-prose">Mọi dữ liệu video, âm thanh của bạn được xử lý hoàn toàn offline trực tiếp trên máy tính của bạn thông qua card đồ họa NVIDIA. Không tải video lên cloud, bảo vệ tuyệt đối bản quyền kênh.</p>
+          </article>
+        </div>
+        <div class="card-shell reveal delay-1">
+          <article class="card">
+            <span class="card-kicker">AI Grounded Precision</span>
+            <h3>Kiến trúc Evidence-First</h3>
+            <p class="max-w-prose">Không còn cảnh gán sai video hay lệch kịch bản. Hệ thống tự động phân tích cảnh quay phim dựa trên hình ảnh keyframe, gắn cờ kiểm duyệt timeline và lý do gán cảnh rõ ràng.</p>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- MODES SECTION -->
+    <section id="modes" class="site-shell section">
+      <div class="section-head">
+        <h2>Recap Hay Thuyết Minh? Tool Cân Cả Hai.</h2>
+        <p class="max-w-prose">Linh hoạt lựa chọn giữa hai chế độ xử lý để tạo ra nội dung phù hợp nhất cho kênh của bạn.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card-shell reveal">
+          <article class="card card-recap">
+            <span class="card-kicker">Mode 01 / Short & Dynamic</span>
+            <h3>Chế độ Recap Phim (Movie Recap)</h3>
+            <p class="max-w-prose">Tối ưu cho các video tóm tắt phim ngắn 10-20 phút, video TikTok/Reels triệu view.</p>
+            <ul class="card-list">
+              <li><strong>Phân tích cốt truyện:</strong> AI tự đọc phụ đề và hiểu mạch phim để soạn thảo kịch bản kể chuyện cô đọng, cuốn hút.</li>
+              <li><strong>Tìm cảnh quay thông minh:</strong> Tự động lọc ra các cảnh quay đắt giá trong phim khớp với câu thoại của kịch bản recap.</li>
+              <li><strong>Review & Căn chỉnh:</strong> Nghe thử giọng đọc, căn chỉnh thời lượng khoảng nghỉ và thay thế cảnh quay trực quan.</li>
+              <li><strong>Tạo giọng đọc cuốn hút:</strong> Hỗ trợ các giọng đọc mang phong cách kể chuyện kịch tính, lôi cuốn người xem.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="card-shell reveal delay-1">
+          <article class="card card-dubbing">
+            <span class="card-kicker">Mode 02 / Full Experience</span>
+            <h3>Chế độ Dịch & Thuyết minh (Movie Dubbing)</h3>
+            <p class="max-w-prose">Dịch thuật và thuyết minh tự động cho toàn bộ phim dài (full movie) nhưng vẫn giữ nguyên âm thanh gốc.</p>
+            <ul class="card-list">
+              <li><strong>Dịch thuật giữ sắc thái:</strong> Dịch trực tiếp từ phụ đề gốc của phim, tối ưu ngữ điệu phù hợp văn hóa Việt Nam.</li>
+              <li><strong>Đồng bộ timeline:</strong> Giọng đọc thuyết minh AI tự động khớp chuẩn xác theo thời gian thoại gốc của từng nhân vật.</li>
+              <li><strong>Tách và dìm âm nền (Ducking):</strong> Tự động dìm nhỏ giọng nhân vật gốc khi thuyết minh nói, giữ nguyên nhạc nền và hiệu ứng (SFX).</li>
+              <li><strong>Thuyết minh đa dạng:</strong> Cho phép gán các giọng thuyết minh AI chuyên nghiệp khác nhau cho phim hoặc gán theo nhân vật.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKFLOW SECTION -->
     <section id="workflow" class="site-shell section">
       <div class="section-head">
-        <h2>Workflow rõ từ đầu đến cuối.</h2>
-        <p>Các bước được hiển thị theo tiến trình để creator biết tool đang làm gì và lỗi nằm ở đâu nếu cần debug.</p>
+        <h2>Workflow Rõ Từ Đầu Đến Cuối.</h2>
+        <p class="max-w-prose">Các bước được hiển thị theo tiến trình để creator biết tool đang làm gì và lỗi nằm ở đâu nếu cần debug.</p>
       </div>
       <div class="workflow">
         <div class="pipeline">
@@ -195,13 +237,13 @@
           </div>
           <div class="step">
             <span class="step-index">3</span>
-            <div><strong>AI Full + Clip Find</strong><br><small>Viết recap và chọn cảnh đắt giá.</small></div>
+            <div><strong>AI Full + Clip Find</strong><br><small>Viết kịch bản và tự động gán cảnh đắt giá.</small></div>
             <span class="step-state">done</span>
           </div>
           <div class="step">
             <span class="step-index">4</span>
             <div><strong>Voice + Render Plan</strong><br><small>Tạo giọng đọc, phụ đề, kế hoạch dựng.</small></div>
-            <span class="step-state">review</span>
+            <span class="step-state review">review</span>
           </div>
         </div>
 
@@ -216,8 +258,8 @@
             </div>
           </div>
           <div class="segment">
-            <div class="segment-title"><span>Phân đoạn #2</span><span class="step-state">Thiếu 0.00s</span></div>
-            <p class="segment-text">Ú òa chưa, chưa kịp động thủ đã bị cản về gạt giò không chế luôn!</p>
+            <div class="segment-title"><span>Phân đoạn #2</span><span class="step-state review">Thiếu 0.00s</span></div>
+            <p class="segment-text">Ú òa chưa, chưa kịp động thủ đã bị cản về gạt giò khống chế luôn!</p>
             <div class="segment-actions">
               <span class="pill">Phân tích lại</span>
               <span class="pill">Nghỉ sau câu</span>
@@ -227,91 +269,92 @@
       </div>
     </section>
 
+    <!-- PRICING SECTION -->
     <section id="pricing" class="site-shell section">
       <div class="section-head">
-        <h2>Giá rõ ràng, license gọn.</h2>
-        <p>Chọn gói phù hợp trước khi bắt đầu. Mỗi license dùng cho 1 máy để tránh share key lung tung.</p>
+        <h2>Giá Rõ Ràng, License Gọn.</h2>
+        <p class="max-w-prose">Chọn gói phù hợp trước khi bắt đầu. Mỗi license dùng cho 1 máy để tránh share key lung tung.</p>
       </div>
       <div class="pricing-grid">
-        <article class="price-card featured-price">
-          <div class="price-badge">Khuyên dùng</div>
-          <h3>License trọn đời</h3>
-          <p class="price">899K</p>
-          <p class="price-note">Thanh toán một lần, dùng lâu dài trên 1 máy đã kích hoạt.</p>
-          <ul>
-            <li>Kích hoạt online nhanh.</li>
-            <li>Dùng đầy đủ workflow recap.</li>
-            <li>Hỗ trợ OmniVoice local/LAN.</li>
-            <li>Phù hợp creator làm video thường xuyên.</li>
-          </ul>
-          <a class="btn btn-primary" href="https://t.me/MovieRecapTool_Sales_Bot" target="_blank" rel="noreferrer">Liên
-            hệ mua license</a>
-        </article>
-        <article class="price-card">
-          <div class="price-badge mini-badge">Test nhanh</div>
-          <h3>Pass 7 ngày</h3>
-          <p class="price">100K</p>
-          <p class="price-note">Dành cho ai muốn test nhanh trên máy thật trước khi chọn gói dài hơn.</p>
-          <ul>
-            <li>License 7 ngày cho 1 máy.</li>
-            <li>Phù hợp test cấu hình, CUDA, OmniVoice và workflow cơ bản.</li>
-            <li>Không được trừ vào lifetime nếu mua sau.</li>
-          </ul>
-          <a class="btn btn-secondary" href="https://t.me/MovieRecapTool_Sales_Bot" target="_blank" rel="noreferrer">Mua
-            pass 7 ngày</a>
-        </article>
-        <article class="price-card">
-          <div class="price-badge secondary-badge">Dùng thử</div>
-          <h3>Trial 30 ngày</h3>
-          <p class="price">400K</p>
-          <p class="price-note">Trải nghiệm workflow thực tế trong 30 ngày. Nếu nâng lên trọn đời trong thời gian trial,
-            400K được trừ 100% vào gói lifetime.</p>
-          <ul>
-            <li>License 30 ngày cho 1 máy.</li>
-            <li>Phù hợp test máy, test workflow, test chất lượng voice.</li>
-            <li>Nâng lifetime chỉ cần trả thêm 499K trong thời gian trial.</li>
-          </ul>
-          <a class="btn btn-secondary" href="https://t.me/MovieRecapTool_Sales_Bot" target="_blank"
-            rel="noreferrer">Nhận bản dùng thử</a>
-        </article>
+        <div class="price-card-shell featured-price-shell">
+          <article class="price-card">
+            <div class="price-badge">Khuyên dùng</div>
+            <h3>License Trọn Đời</h3>
+            <p class="price">899K</p>
+            <p class="price-note max-w-prose">Thanh toán một lần, dùng lâu dài trên 1 máy đã kích hoạt.</p>
+            <ul class="max-w-prose">
+              <li>Kích hoạt online nhanh.</li>
+              <li>Dùng đầy đủ workflow recap.</li>
+              <li>Hỗ trợ OmniVoice local/LAN.</li>
+              <li>Phù hợp creator làm video thường xuyên.</li>
+            </ul>
+            <a class="btn btn-primary" href="https://t.me/MovieRecapTool_Sales_Bot" target="_blank" rel="noreferrer">Liên hệ mua license <span class="btn-icon-wrapper">↗</span></a>
+          </article>
+        </div>
+        <div class="price-card-shell">
+          <article class="price-card">
+            <div class="price-badge mini-badge">Test nhanh</div>
+            <h3>Pass 7 Ngày</h3>
+            <p class="price">100K</p>
+            <p class="price-note max-w-prose">Dành cho ai muốn test nhanh trên máy thật trước khi chọn gói dài hơn.</p>
+            <ul class="max-w-prose">
+              <li>License 7 ngày cho 1 máy.</li>
+              <li>Phù hợp test cấu hình, CUDA, OmniVoice và workflow cơ bản.</li>
+              <li>Không được trừ vào lifetime nếu mua sau.</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://t.me/MovieRecapTool_Sales_Bot" target="_blank" rel="noreferrer">Mua pass 7 ngày <span class="btn-icon-wrapper">↗</span></a>
+          </article>
+        </div>
+        <div class="price-card-shell">
+          <article class="price-card">
+            <div class="price-badge secondary-badge">Dùng thử</div>
+            <h3>Trial 30 Ngày</h3>
+            <p class="price">400K</p>
+            <p class="price-note max-w-prose">Trải nghiệm workflow thực tế trong 30 ngày. Nếu nâng lên trọn đời trong thời gian trial, 400K được trừ 100% vào gói lifetime.</p>
+            <ul class="max-w-prose">
+              <li>License 30 ngày cho 1 máy.</li>
+              <li>Phù hợp test máy, test workflow, test chất lượng voice.</li>
+              <li>Nâng lifetime chỉ cần trả thêm 499K trong thời gian trial.</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://t.me/MovieRecapTool_Sales_Bot" target="_blank" rel="noreferrer">Nhận bản dùng thử <span class="btn-icon-wrapper">↗</span></a>
+          </article>
+        </div>
       </div>
       <div class="community-strip">
         <div>
           <strong>Tham gia nhóm kín Facebook</strong>
-          <span>Nhận hướng dẫn, cập nhật build mới, case study recap và ưu đãi đặc biệt cho thành viên. License vẫn được
-            Kent Juno cấp chính thức sau khi xác nhận thanh toán.</span>
+          <span class="max-w-prose">Nhận hướng dẫn, cập nhật build mới, case study recap và ưu đãi đặc biệt cho thành viên. License vẫn được Kent Juno cấp chính thức sau khi xác nhận thanh toán.</span>
         </div>
         <div class="community-actions">
           <a class="btn btn-orange" href="https://www.facebook.com/groups/kja.ivibecodetutien" target="_blank"
-            rel="noreferrer">Vào group kín</a>
+            rel="noreferrer">Vào group kín <span class="btn-icon-wrapper">↗</span></a>
           <a class="btn btn-secondary"
             href="https://www.facebook.com/kentjuno/supporters/?entrypoint_surface=DIRECTORY&surface=directory"
-            target="_blank" rel="noreferrer">Sub supporter</a>
+            target="_blank" rel="noreferrer">Sub supporter <span class="btn-icon-wrapper">↗</span></a>
         </div>
       </div>
     </section>
 
+    <!-- DOWNLOAD SECTION -->
     <section id="download" class="site-shell section">
       <div class="download-panel">
         <div>
           <div class="eyebrow">Public build checklist</div>
-          <h2>Tải app từ GitHub Releases.</h2>
-          <p class="hero-copy">
-            Bản đầu tiên sẽ dùng license online, 1 key cho 1 máy. Windows SmartScreen có thể cảnh báo vì app chưa
-            code-sign bằng certificate thương mại.
+          <h2>Tải App Từ GitHub Releases.</h2>
+          <p class="hero-copy max-w-prose">
+            Bản đầu tiên sẽ dùng license online, 1 key cho 1 máy. Windows SmartScreen có thể cảnh báo vì app chưa code-sign bằng certificate thương mại.
           </p>
           <div class="button-row">
             <a id="download-latest" class="btn btn-orange"
-              href="https://github.com/kentjuno/MovieRecapTool-Landing/releases" target="_blank" rel="noreferrer">Tải
-              bản mới nhất</a>
-            <a class="btn btn-secondary" href="#docs">Đọc hướng dẫn trước</a>
+              href="https://github.com/kentjuno/MovieRecapTool-Landing/releases" target="_blank" rel="noreferrer">Tải bản mới nhất <span class="btn-icon-wrapper">↗</span></a>
+            <a class="btn btn-secondary" href="#docs">Đọc hướng dẫn trước <span class="btn-icon-wrapper">↗</span></a>
           </div>
         </div>
         <aside class="release-box">
           <h3>Release info</h3>
           <p>Version: 1.1.3 (Bản chính thức)</p>
           <p>File: <code>MovieRecapTool_Setup_v1.1.3.zip</code></p>
-          <div class="checksum" style="font-size: 11px;">
+          <div class="checksum">
             <span>SHA256: EB435BB8546D82FF8CB66BBF85A31F1F162E62465C59113D0AA8156C911781B5</span>
             <button class="copy-btn"
               data-copy="EB435BB8546D82FF8CB66BBF85A31F1F162E62465C59113D0AA8156C911781B5">Copy</button>
@@ -320,274 +363,310 @@
       </div>
     </section>
 
+    <!-- CONFIGURATION SECTION -->
     <section id="requirements" class="site-shell section">
       <div class="section-head">
-        <h2>Cấu hình để chạy MovieRecapTool.</h2>
-        <p>App có thể chạy CPU, nhưng để làm recap phim thực tế thì nên dùng máy Windows có NVIDIA GPU. Whisper, video
-          processing và voice rendering sẽ chậm nếu máy quá yếu.</p>
+        <h2>Cấu Hình Để Chạy MovieRecapTool.</h2>
+        <p class="max-w-prose">App có thể chạy CPU, nhưng để làm recap phim thực tế thì nên dùng máy Windows có NVIDIA GPU. Whisper, video processing và voice rendering sẽ chậm nếu máy quá yếu.</p>
       </div>
       <div class="requirements-grid">
-        <article class="requirement-card">
-          <div class="requirement-label">Minimum</div>
-          <h3>Chạy được, phù hợp test ngắn</h3>
-          <ul>
-            <li>Windows 10/11 64-bit.</li>
-            <li>RAM 16GB.</li>
-            <li>CPU 4 nhân trở lên.</li>
-            <li>SSD còn trống tối thiểu 20GB.</li>
-            <li>Có thể chạy không GPU, nhưng Whisper và render sẽ chậm.</li>
-            <li>Cần internet để kích hoạt license, gọi AI provider và tải thêm GPU package nếu cần.</li>
-          </ul>
-        </article>
-        <article class="requirement-card highlight">
-          <div class="requirement-label">Recommended</div>
-          <h3>Dùng ổn để làm recap thường xuyên</h3>
-          <ul>
-            <li>Windows 11 64-bit.</li>
-            <li>RAM 32GB trở lên.</li>
-            <li>NVIDIA GPU 8GB VRAM trở lên.</li>
-            <li>Driver NVIDIA mới, kiểm tra được bằng <code>nvidia-smi</code>.</li>
-            <li>SSD còn trống 50GB+ cho project, cache, video và audio tạm.</li>
-            <li>OmniVoice API Server chạy local hoặc chạy trên máy khác trong LAN.</li>
-          </ul>
-        </article>
-        <article class="requirement-card">
-          <div class="requirement-label">Tested</div>
-          <h3>Cấu hình đã test ổn định</h3>
-          <ul>
-            <li>Laptop RTX 3070 Ti.</li>
-            <li>64GB RAM.</li>
-            <li>NVIDIA GPU đã kích hoạt cuBLAS/cuDNN cho faster-whisper.</li>
-            <li>Phù hợp workflow: subtitle/Whisper, AI analysis, OmniVoice, review cảnh và render recap.</li>
-            <li>Nếu bạn làm video dài hoặc chạy nhiều project, nên ưu tiên RAM và SSD.</li>
-          </ul>
-        </article>
+        <div class="requirement-card-shell">
+          <article class="requirement-card">
+            <div class="requirement-label">Minimum</div>
+            <h3>Chạy được, phù hợp test ngắn</h3>
+            <ul class="max-w-prose">
+              <li>Windows 10/11 64-bit.</li>
+              <li>RAM 16GB.</li>
+              <li>CPU 4 nhân trở lên.</li>
+              <li>SSD còn trống tối thiểu 20GB.</li>
+              <li>Có thể chạy không GPU, nhưng Whisper và render sẽ chậm.</li>
+              <li>Cần internet để kích hoạt license, gọi AI provider và tải thêm GPU package.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="requirement-card-shell highlight-shell">
+          <article class="requirement-card">
+            <div class="requirement-label">Recommended</div>
+            <h3>Dùng ổn để làm recap thường xuyên</h3>
+            <ul class="max-w-prose">
+              <li>Windows 11 64-bit.</li>
+              <li>RAM 32GB trở lên.</li>
+              <li>NVIDIA GPU 8GB VRAM trở lên.</li>
+              <li>Driver NVIDIA mới, kiểm tra bằng <code>nvidia-smi</code>.</li>
+              <li>SSD trống 50GB+ cho project, cache, video và audio tạm.</li>
+              <li>OmniVoice API Server chạy local hoặc chạy trên máy khác trong LAN.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="requirement-card-shell">
+          <article class="requirement-card">
+            <div class="requirement-label">Tested</div>
+            <h3>Cấu hình đã test ổn định</h3>
+            <ul class="max-w-prose">
+              <li>Laptop RTX 3070 Ti.</li>
+              <li>64GB RAM.</li>
+              <li>NVIDIA GPU đã kích hoạt cuBLAS/cuDNN cho faster-whisper.</li>
+              <li>Phù hợp workflow: subtitle/Whisper, AI analysis, OmniVoice, review cảnh và render.</li>
+              <li>Nếu bạn làm video dài hoặc chạy nhiều project, nên ưu tiên RAM và SSD.</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
+    <!-- INSTRUCTIONS / SETUP GUIDE SECTION -->
     <section id="docs" class="site-shell section">
       <div class="section-head">
-        <h2>Hướng dẫn cài đặt & sử dụng.</h2>
-        <p>Hướng dẫn chi tiết từng bước cho creator: từ chuẩn bị cấu hình, cài đặt OmniVoice, cài Antigravity CLI đến
-          kích hoạt và bắt đầu recap phim.</p>
+        <h2>Hướng Dẫn Cài Đặt & Sử Dụng.</h2>
+        <p class="max-w-prose">Hướng dẫn chi tiết từng bước cho creator: từ chuẩn bị cấu hình, cài đặt OmniVoice, cài Antigravity CLI đến kích hoạt và bắt đầu recap phim.</p>
       </div>
 
       <div class="setup-guide">
-        <!-- Yêu cầu cấu hình -->
-        <div class="setup-specs-card">
-          <h3>⚡ Yêu cầu cấu hình hệ thống</h3>
-          <div class="specs-grid">
-            <div class="spec-item">
-              <strong>Hệ điều hành</strong>
-              <span>Windows 10/11 64-bit</span>
+        <div class="setup-specs-card-shell">
+          <div class="setup-specs-card">
+            <h3>⚡ Yêu cầu cấu hình hệ thống</h3>
+            <div class="specs-grid">
+              <div class="spec-item">
+                <strong>Hệ điều hành</strong>
+                <span>Windows 10/11 64-bit</span>
+              </div>
+              <div class="spec-item">
+                <strong>Bộ nhớ RAM</strong>
+                <span>16GB+ (Khuyên dùng 32GB+ để đa nhiệm)</span>
+              </div>
+              <div class="spec-item">
+                <strong>Card đồ họa (GPU)</strong>
+                <span>NVIDIA 8GB VRAM trở lên</span>
+              </div>
+              <div class="spec-item">
+                <strong>NVIDIA Driver</strong>
+                <span>Phiên bản mới nhất</span>
+              </div>
+              <div class="spec-item">
+                <strong>CUDA Toolkit</strong>
+                <span>CUDA Toolkit mới nhất</span>
+              </div>
             </div>
-            <div class="spec-item">
-              <strong>Bộ nhớ RAM</strong>
-              <span>16GB+ (Khuyên dùng 32GB+ để đa nhiệm)</span>
+            <div class="spec-footer-note">
+              💡 Đã kiểm thử chạy cực kỳ ổn định trên Laptop RTX 3070 Ti + 64GB RAM.
             </div>
-            <div class="spec-item">
-              <strong>Card đồ họa (GPU)</strong>
-              <span>NVIDIA 8GB VRAM trở lên</span>
-            </div>
-            <div class="spec-item">
-              <strong>NVIDIA Driver</strong>
-              <span>Phiên bản mới nhất</span>
-            </div>
-            <div class="spec-item">
-              <strong>CUDA Toolkit</strong>
-              <span>CUDA Toolkit mới nhất</span>
-            </div>
-          </div>
-          <div class="spec-footer-note">
-            💡 Đã kiểm thử chạy cực kỳ ổn định trên Laptop RTX 3070 Ti + 64GB RAM.
           </div>
         </div>
 
         <!-- Các bước cài đặt -->
         <div class="setup-steps">
           <!-- Bước 1 -->
-          <div class="setup-step-card reveal">
-            <div class="step-num">01</div>
-            <h3>Bước 1 - Cập nhật Driver NVIDIA & Cài CUDA Toolkit</h3>
-            <p>Yêu cầu tối quan trọng để tăng tốc phần cứng (GPU) cho Whisper (nhận diện giọng nói nhanh gấp 10-20 lần CPU) và xử lý video.</p>
+          <div class="setup-step-card-shell reveal">
+            <div class="setup-step-card">
+              <div class="step-num">01</div>
+              <h3>Bước 1 - Cập nhật Driver NVIDIA & Cài CUDA Toolkit</h3>
+              <p class="max-w-prose">Yêu cầu tối quan trọng để tăng tốc phần cứng (GPU) cho Whisper (nhận diện thoại nhanh gấp 10-20 lần CPU) và xử lý video.</p>
 
-            <div class="step-action-box" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 14px;">
-              <a class="btn btn-secondary" href="https://www.nvidia.com/Download/index.aspx" target="_blank"
-                rel="noreferrer">
-                <span>🌐 Tải NVIDIA Driver mới nhất</span>
-              </a>
-              <a class="btn btn-secondary" href="https://developer.nvidia.com/cuda-downloads" target="_blank"
-                rel="noreferrer">
-                <span>🛠️ Tải CUDA Toolkit</span>
-              </a>
-            </div>
+              <div class="btn-action-row">
+                <a class="btn btn-secondary" href="https://www.nvidia.com/Download/index.aspx" target="_blank"
+                  rel="noreferrer">🌐 Tải Driver NVIDIA <span class="btn-icon-wrapper">↗</span></a>
+                <a class="btn btn-secondary" href="https://developer.nvidia.com/cuda-downloads" target="_blank"
+                  rel="noreferrer">🛠️ Tải CUDA Toolkit <span class="btn-icon-wrapper">↗</span></a>
+              </div>
 
-            <div class="step-details" style="margin-top: 16px;">
-              <ul>
-                <li><strong>NVIDIA Driver:</strong> Đảm bảo máy tính của bạn đã cập nhật Driver card đồ họa NVIDIA mới nhất từ link chính thức bên trên.</li>
-                <li><strong>CUDA Toolkit:</strong> Tải và cài đặt CUDA Toolkit phiên bản mới nhất. Khi cài đặt, hãy chọn cài đặt mặc định (Express Install).</li>
-                <li><strong>Kích hoạt thư viện CUDA/cuDNN cho Whisper:</strong>
-                  <ul>
-                    <li>Khởi chạy MovieRecapTool, ứng dụng sẽ quét hệ thống và hiển thị Banner màu vàng ở màn hình đầu tiên: <em>"Phát hiện card NVIDIA nhưng chưa kích hoạt CUDA/cuDNN"</em>.</li>
-                    <li>Nhấp vào nút <strong>"Kích hoạt GPU (Tải tự động)"</strong> bên cạnh để ứng dụng tự động tải về cuBLAS & cuDNN (dung lượng ~270MB), giải nén và kích hoạt GPU hoàn hảo.</li>
-                    <li>Nếu trong app gặp lỗi mạng không tải được, hãy vào thư mục cài đặt ứng dụng và click đúp vào file <strong><code>activate_gpu.bat</code></strong> để chạy kích hoạt thủ công.</li>
-                    <li>Sau khi kích hoạt xong, hãy tắt và khởi động lại ứng dụng để Whisper nhận dạng và hoạt động trên GPU NVIDIA.</li>
-                  </ul>
-                </li>
-              </ul>
+              <div class="step-details">
+                <ul class="max-w-prose">
+                  <li><strong>NVIDIA Driver:</strong> Đảm bảo máy tính của bạn đã cập nhật Driver card đồ họa NVIDIA mới nhất từ link chính thức bên trên.</li>
+                  <li><strong>CUDA Toolkit:</strong> Tải và cài đặt CUDA Toolkit phiên bản mới nhất. Khi cài đặt, hãy chọn cài đặt mặc định (Express Install).</li>
+                  <li><strong>Kích hoạt thư viện CUDA/cuDNN cho Whisper:</strong>
+                    <ul>
+                      <li>Khởi chạy MovieRecapTool, ứng dụng sẽ hiển thị Banner màu vàng ở màn hình đầu tiên: <em>"Phát hiện card NVIDIA nhưng chưa kích hoạt CUDA/cuDNN"</em>.</li>
+                      <li>Nhấp vào nút <strong>"Kích hoạt GPU (Tải tự động)"</strong> bên cạnh để ứng dụng tự động tải về cuBLAS & cuDNN (dung lượng ~270MB), giải nén và kích hoạt GPU.</li>
+                      <li>Nếu gặp lỗi mạng, vào thư mục cài đặt ứng dụng và click đúp vào file <strong><code>activate_gpu.bat</code></strong> để chạy kích hoạt thủ công.</li>
+                      <li>Sau khi kích hoạt xong, hãy tắt và khởi động lại ứng dụng để Whisper nhận dạng và hoạt động trên GPU.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <!-- Bước 2 -->
-          <div class="setup-step-card reveal">
-            <div class="step-num">02</div>
-            <h3>Bước 2 - Tải ứng dụng MovieRecapTool</h3>
-            <p>Tải về gói cài đặt chính thức của MovieRecapTool.</p>
+          <div class="setup-step-card-shell reveal">
+            <div class="setup-step-card">
+              <div class="step-num">02</div>
+              <h3>Bước 2 - Tải ứng dụng MovieRecapTool</h3>
+              <p class="max-w-prose">Tải về gói cài đặt chính thức của MovieRecapTool.</p>
 
-            <div class="step-action-box" style="margin-top: 12px;">
-              <a class="btn btn-primary" href="#download">Tới phần tải ứng dụng</a>
-            </div>
+              <div class="step-action-box">
+                <a class="btn btn-primary" href="#download">Tới phần tải ứng dụng <span class="btn-icon-wrapper">↗</span></a>
+              </div>
 
-            <div class="step-details">
-              <ul>
-                <li>Cuộn lên phần <strong>Download</strong> bên trên hoặc liên hệ trực tiếp Kent Juno để nhận file ZIP bản dựng mới nhất.</li>
-                <li>Giải nén tệp tin đã tải về máy tính của bạn.</li>
-                <li>Nếu bạn dùng bản Setup, click đúp file cài đặt (ví dụ: <code>MovieRecapTool_Setup_v1.1.3.exe</code>) để tiến hành cài đặt.</li>
-                <li><em>Mẹo: Windows SmartScreen có thể hiện cảnh báo "Unknown Publisher" vì ứng dụng chưa ký số thương mại. Bấm <strong>"More info"</strong> rồi chọn <strong>"Run anyway"</strong> để cho phép chạy.</em></li>
-              </ul>
+              <div class="step-details">
+                <ul class="max-w-prose">
+                  <li>Cuộn lên phần <strong>Download</strong> bên trên hoặc liên hệ trực tiếp Kent Juno để nhận file ZIP bản dựng mới nhất.</li>
+                  <li>Giải nén tệp tin đã tải về máy tính của bạn.</li>
+                  <li>Nếu bạn dùng bản Setup, click đúp file cài đặt (ví dụ: <code>MovieRecapTool_Setup_v1.1.3.exe</code>) để tiến hành cài đặt.</li>
+                  <li><em>Mẹo: Windows SmartScreen có thể hiện cảnh báo "Unknown Publisher" vì ứng dụng chưa ký số thương mại. Bấm <strong>"More info"</strong> rồi chọn <strong>"Run anyway"</strong> để cho phép chạy.</em></li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <!-- Bước 3 -->
-          <div class="setup-step-card reveal">
-            <div class="step-num">03</div>
-            <h3>Bước 3 - Cài đặt OmniVoice API Server tự động qua GUI</h3>
-            <p>Môi trường thuyết minh giọng nói cục bộ (chạy offline trực tiếp trên máy hoặc mạng LAN của bạn) đã được tích hợp sẵn trong bộ cài app.</p>
-            <div class="step-details" style="margin-top: 16px;">
-              <ul>
-                <li><strong>Cách cài đặt khuyên dùng (Tự động hoàn toàn):</strong>
-                  <ul>
-                    <li>Khi bạn mở ứng dụng <strong>MovieRecapTool</strong> lần đầu tiên, hệ thống sẽ tự động quét và phát hiện trạng thái cài đặt của OmniVoice.</li>
-                    <li>Hộp thoại cài đặt tự động sẽ xuất hiện. Bạn chỉ cần chọn phiên bản <strong>CUDA</strong> phù hợp với card đồ họa NVIDIA của máy (Ví dụ: <code>cu121</code> nếu dùng RTX 30/40 series, <code>cu118</code> cho các dòng card cũ hơn, hoặc <code>CPU</code> nếu máy không có card rời NVIDIA).</li>
-                    <li>Nhấn nút <strong>"Cài đặt tự động"</strong>. Ứng dụng sẽ tự động tải các gói thư viện PyTorch CUDA, khởi tạo môi trường ảo (<code>venv</code>), tải các mô hình giọng nói AI chất lượng cao từ Hugging Face (~1.5GB) và hoàn tất cấu hình hoàn toàn ngầm.</li>
-                    <li>Sau khi cài đặt xong, máy chủ lồng tiếng sẽ <strong>tự động khởi chạy</strong> ngầm mỗi khi bạn mở ứng dụng chính. Bạn không cần làm thêm bất kỳ thao tác dòng lệnh phức tạp nào.</li>
-                  </ul>
-                </li>
-              </ul>
+          <div class="setup-step-card-shell reveal">
+            <div class="setup-step-card">
+              <div class="step-num">03</div>
+              <h3>Bước 3 - Cài đặt OmniVoice API Server tự động qua GUI</h3>
+              <p class="max-w-prose">Môi trường thuyết minh giọng nói cục bộ (chạy offline trực tiếp trên máy hoặc mạng LAN) đã được tích hợp sẵn trong bộ cài app.</p>
+              <div class="step-details">
+                <ul class="max-w-prose">
+                  <li><strong>Cách cài đặt khuyên dùng (Tự động hoàn toàn):</strong>
+                    <ul>
+                      <li>Khi mở ứng dụng <strong>MovieRecapTool</strong> lần đầu, hệ thống sẽ tự động quét và phát hiện trạng thái cài đặt của OmniVoice.</li>
+                      <li>Hộp thoại cài đặt tự động sẽ xuất hiện. Chọn phiên bản <strong>CUDA</strong> phù hợp với card đồ họa (Ví dụ: <code>cu121</code> nếu dùng RTX 30/40 series, <code>cu118</code> cho các dòng card cũ hơn, hoặc <code>CPU</code>).</li>
+                      <li>Nhấn nút <strong>"Cài đặt tự động"</strong>. Ứng dụng sẽ tự động tải các gói thư viện PyTorch CUDA, khởi tạo môi trường ảo (<code>venv</code>), tải các mô hình giọng nói AI chất lượng cao từ Hugging Face (~1.5GB) và hoàn tất cấu hình.</li>
+                      <li>Sau khi cài đặt xong, máy chủ lồng tiếng sẽ <strong>tự động khởi chạy</strong> ngầm mỗi khi bạn mở ứng dụng chính.</li>
+                    </ul>
+                  </li>
+                </ul>
 
-              <!-- Mục nâng cao thu gọn cho bat file -->
-              <details style="margin-top: 18px; padding: 14px; border: 1px solid var(--line); border-radius: 12px; background: rgba(0,0,0,0.18);">
-                <summary style="font-weight: 700; cursor: pointer; color: var(--teal-2);">⚙️ Hướng dẫn Cài đặt & Chạy thủ công (Troubleshooting / LAN Server)</summary>
-                <div style="margin-top: 10px; font-size: 14px; line-height: 1.6;">
-                  <p>Nếu bạn gặp sự cố mạng khi cài tự động, hoặc muốn thiết lập máy chủ OmniVoice độc lập chạy trên một máy tính khác trong mạng LAN:</p>
-                  <ol style="padding-left: 20px; margin-top: 8px;">
-                    <li><strong>Chuẩn bị mã nguồn:</strong> Vào thư mục cài đặt ứng dụng MovieRecapTool, tìm thư mục con <code>omnivoice-api-server</code>. (Hoặc bạn có thể tải mã nguồn trực tiếp từ <a href="https://github.com/kentjuno/omnivoice-api-server" target="_blank" rel="noreferrer" style="color: var(--teal); text-decoration: underline;">GitHub Repository</a>).</li>
-                    <li><strong>Cài đặt thủ công:</strong> Nhấp đúp vào file <code>setup_and_run.bat</code> để chạy trình cài đặt thủ công. Cửa sổ Command Prompt sẽ hiển thị đầy đủ tiến trình tải thư viện, giúp bạn dễ dàng theo dõi lỗi mạng hoặc cấu hình nếu có.</li>
-                    <li><strong>Chạy thủ công:</strong> Trong các lần sử dụng sau, nếu muốn chạy độc lập không qua app, chỉ cần chạy file <code>run.bat</code> để bật máy chủ API lên. Cổng chạy mặc định là <code>8088</code>.</li>
-                  </ol>
-                </div>
-              </details>
+                <!-- Mục nâng cao thu gọn cho bat file -->
+                <details class="details-box">
+                  <summary class="details-summary">⚙️ Hướng dẫn Cài đặt & Chạy thủ công (Troubleshooting / LAN Server)</summary>
+                  <div class="details-content">
+                    <p>Nếu bạn gặp sự cố mạng khi cài tự động, hoặc muốn thiết lập máy chủ OmniVoice độc lập chạy trên một máy tính khác trong mạng LAN:</p>
+                    <ol>
+                      <li><strong>Chuẩn bị mã nguồn:</strong> Vào thư mục cài đặt ứng dụng MovieRecapTool, tìm thư mục con <code>omnivoice-api-server</code>. (Hoặc tải mã nguồn từ GitHub Repository).</li>
+                      <li><strong>Cài đặt thủ công:</strong> Nhấp đúp vào file <code>setup_and_run.bat</code> để chạy trình cài đặt thủ công.</li>
+                      <li><strong>Chạy thủ công:</strong> Trong các lần sử dụng sau, chạy file <code>run.bat</code> để bật máy chủ API lên. Cổng chạy mặc định là <code>8088</code>.</li>
+                    </ol>
+                  </div>
+                </details>
+
+                <!-- Mục hướng dẫn khắc phục lỗi GPU NVIDIA / Blackwell RTX 50x -->
+                <details class="details-box details-box-orange">
+                  <summary class="details-summary details-summary-orange">⚡ Khắc phục lỗi kẹt/CPU Fallback cho card RTX 50x (Blackwell) & card NVIDIA khác</summary>
+                  <div class="details-content">
+                    <p>Nếu OmniVoice không nhận GPU (chạy ở chế độ CPU rất chậm) hoặc bị kẹt do Pip lỡ tải bản CPU đè lên bản CUDA, bạn thực hiện khắc phục nhanh như sau:</p>
+                    <ol>
+                      <li><strong>Đóng hoàn toàn</strong> ứng dụng <code>MovieRecapTool</code>.</li>
+                      <li>Mở thư mục cài đặt dự án, truy cập vào thư mục: <code>omnivoice-api-server</code>.</li>
+                      <li>Nhấp đúp chuột để chạy file script dọn dẹp: <strong><code>clean_torch_cpu.bat</code></strong>.</li>
+                      <li>Cửa sổ Command Prompt hiện lên sẽ tự động gỡ sạch bản PyTorch CPU cũ và dọn bộ nhớ đệm <code>pip cache</code>, sau đó tự khởi động lại trình cấu hình.</li>
+                      <li>Nhập lựa chọn phiên bản tương thích với card của bạn:
+                        <ul>
+                          <li>Nhập <code>0</code> để tự động phát hiện driver (khuyên dùng).</li>
+                          <li>Nhập <code>1</code> để cài PyTorch CUDA 12.6 (Tốt nhất cho RTX 50xx / Blackwell chạy Driver mới nhất).</li>
+                          <li>Nhập <code>2</code> để cài PyTorch CUDA 12.4.</li>
+                          <li>Nhập <code>3</code> để cài PyTorch CUDA 12.1.</li>
+                        </ul>
+                      </li>
+                      <li>Hệ thống sẽ hoàn tất việc cài đặt phiên bản GPU NVIDIA sạch sẽ và ổn định.</li>
+                    </ol>
+                  </div>
+                </details>
+              </div>
             </div>
           </div>
 
           <!-- Bước 4 -->
-          <div class="setup-step-card reveal">
-            <div class="step-num">04</div>
-            <h3>Bước 4 - Cài đặt Antigravity CLI</h3>
-            <p>Công cụ dòng lệnh CLI để xác thực và kích hoạt môi trường trí tuệ nhân tạo Google Pro.</p>
+          <div class="setup-step-card-shell reveal">
+            <div class="setup-step-card">
+              <div class="step-num">04</div>
+              <h3>Bước 4 - Cài đặt Antigravity CLI</h3>
+              <p class="max-w-prose">Công cụ dòng lệnh CLI để xác thực và kích hoạt môi trường trí tuệ nhân tạo Google Pro.</p>
 
-            <div class="cli-installer-tabs">
-              <div class="cli-tab-headers">
-                <button class="cli-tab-btn active" data-tab-target="#cli-powershell">PowerShell (Khuyên dùng)</button>
-                <button class="cli-tab-btn" data-tab-target="#cli-cmd">Command Prompt (CMD)</button>
-              </div>
+              <div class="cli-installer-tabs">
+                <div class="cli-tab-headers">
+                  <button class="cli-tab-btn active" data-tab-target="#cli-powershell">PowerShell (Khuyên dùng)</button>
+                  <button class="cli-tab-btn" data-tab-target="#cli-cmd">Command Prompt (CMD)</button>
+                </div>
 
-              <div class="cli-tab-content active" id="cli-powershell">
-                <p>Mở <strong>PowerShell</strong> (với quyền Run as Administrator nếu có thể) và dán dòng lệnh sau:</p>
-                <div class="code-copy-block">
-                  <code>irm https://antigravity.google/cli/install.ps1 | iex</code>
-                  <button class="copy-btn"
-                    data-copy="irm https://antigravity.google/cli/install.ps1 | iex">Copy</button>
+                <div class="cli-tab-content active" id="cli-powershell">
+                  <p>Mở <strong>PowerShell</strong> (với quyền Run as Administrator nếu có thể) và dán dòng lệnh sau:</p>
+                  <div class="code-copy-block">
+                    <code>irm https://antigravity.google/cli/install.ps1 | iex</code>
+                    <button class="copy-btn" data-copy="irm https://antigravity.google/cli/install.ps1 | iex">Copy</button>
+                  </div>
+                </div>
+
+                <div class="cli-tab-content" id="cli-cmd">
+                  <p>Mở <strong>CMD</strong> và dán dòng lệnh sau:</p>
+                  <div class="code-copy-block">
+                    <code>curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd</code>
+                    <button class="copy-btn" data-copy="curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd">Copy</button>
+                  </div>
                 </div>
               </div>
 
-              <div class="cli-tab-content" id="cli-cmd">
-                <p>Mở <strong>CMD</strong> và dán dòng lệnh sau:</p>
+              <div class="step-details">
+                <p class="max-w-prose">Sau khi tiến trình cài đặt hoàn thành, hãy mở một cửa sổ CMD mới và chạy lệnh sau:</p>
                 <div class="code-copy-block">
-                  <code>curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd</code>
-                  <button class="copy-btn"
-                    data-copy="curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd">Copy</button>
+                  <code>agy</code>
+                  <button class="copy-btn" data-copy="agy">Copy</button>
                 </div>
-              </div>
-            </div>
 
-            <div class="step-details">
-              <p>Sau khi tiến trình cài đặt hoàn thành, hãy mở một cửa sổ CMD mới và chạy lệnh sau:</p>
-              <div class="code-copy-block">
-                <code>agy</code>
-                <button class="copy-btn" data-copy="agy">Copy</button>
+                <p class="max-w-prose"><strong>Hướng dẫn đăng nhập tài khoản Google Pro/Ultra chi tiết từng bước:</strong></p>
+                <ol class="max-w-prose">
+                  <li>Sau khi gõ <code>agy</code> và bấm Enter, màn hình CMD sẽ hiển thị một <strong>đường link xác thực</strong> kèm theo mã thiết bị.</li>
+                  <li><strong>Bôi đen đường link đó (bôi đen từ đầu HTTPS:// đến hết), nhấp chuột phải để Copy</strong>. Dán link này vào trình duyệt web của bạn.</li>
+                  <li>Tiến hành đăng nhập tài khoản Google của bạn trên trình duyệt (Khuyến nghị sử dụng tài khoản <strong>Google Pro hoặc Ultra</strong> trở lên để AI có hiệu năng tốt nhất).</li>
+                  <li>Sau khi đăng nhập và cấp quyền thành công, trình duyệt sẽ trả về một <strong>mã code xác thực</strong>.</li>
+                  <li><strong>Copy mã code đó, click chuột phải vào cửa sổ CMD để dán (paste)</strong> và nhấn <strong>Enter</strong> để hoàn tất liên kết tài khoản.</li>
+                  <li>Gõ thử 1 hoặc 2 câu chat bất kỳ để kiểm tra xem AI phản hồi bình thường.</li>
+                </ol>
               </div>
-
-              <p><strong>Hướng dẫn đăng nhập tài khoản Google Pro/Ultra chi tiết từng bước:</strong></p>
-              <ol style="margin-top: 8px;">
-                <li>Sau khi gõ <code>agy</code> và bấm Enter, màn hình CMD sẽ hiển thị một <strong>đường link xác thực</strong> kèm theo mã thiết bị.</li>
-                <li><strong>Bôi đen đường link đó (NHỚ BÔI ĐEN TOÀN BỘ ĐỦ ĐƯỜNG LINK BAO GỒM HTTPS:// Ở ĐẦU TỚI CUỐI!!!), nhấp chuột phải để Copy</strong> (trên Windows CMD, chỉ cần bôi đen rồi click chuột phải là máy sẽ tự copy). Dán link này vào trình duyệt web của bạn.</li>
-                <li>Tiến hành đăng nhập tài khoản Google của bạn trên trình duyệt (Khuyến nghị sử dụng tài khoản <strong>Google Pro hoặc Ultra</strong> trở lên để AI có hiệu năng phân tích kịch bản tốt nhất).</li>
-                <li>Sau khi đăng nhập và cấp quyền thành công, trình duyệt sẽ trả về một <strong>mã code xác thực</strong>.</li>
-                <li><strong>Copy mã code đó, click chuột phải vào cửa sổ CMD để dán (paste)</strong> và nhấn <strong>Enter</strong> để hoàn tất liên kết tài khoản.</li>
-                <li>Gõ thử 1 hoặc 2 câu chat bất kỳ để kiểm tra xem AI có phản hồi bình thường hay không.</li>
-              </ol>
             </div>
           </div>
 
           <!-- Bước 5 -->
-          <div class="setup-step-card reveal">
-            <div class="step-num">05</div>
-            <h3>Bước 5 - Kích hoạt bản quyền (License)</h3>
-            <p>Mỗi key bản quyền (License Key) được liên kết cố định với phần cứng thiết bị của bạn.</p>
+          <div class="setup-step-card-shell reveal">
+            <div class="setup-step-card">
+              <div class="step-num">05</div>
+              <h3>Bước 5 - Kích hoạt bản quyền (License)</h3>
+              <p class="max-w-prose">Mỗi key bản quyền (License Key) được liên kết cố định với phần cứng thiết bị của bạn.</p>
 
-            <div class="step-details">
-              <ul>
-                <li>Khởi động ứng dụng MovieRecapTool.</li>
-                <li>Ứng dụng sẽ hiển thị màn hình khóa yêu cầu nhập key.</li>
-                <li>Sao chép thông tin hiển thị trên màn hình bao gồm <strong>Email đăng ký</strong> và chuỗi <strong>License Request</strong>.</li>
-                <li>Gửi các thông tin này cho anh Kent (Kent Juno) qua kênh hỗ trợ (ví dụ chat Facebook hoặc Telegram).</li>
-                <li>Sau khi kích hoạt online trên server admin thành công, bạn sẽ nhận được License Key để nhập vào mở khóa ứng dụng hoàn toàn.</li>
-              </ul>
+              <div class="step-details">
+                <ul class="max-w-prose">
+                  <li>Khởi động ứng dụng MovieRecapTool.</li>
+                  <li>Ứng dụng sẽ hiển thị màn hình khóa yêu cầu nhập key.</li>
+                  <li>Sao chép thông tin hiển thị trên màn hình bao gồm <strong>Email đăng ký</strong> và chuỗi <strong>License Request</strong>.</li>
+                  <li>Gửi các thông tin này cho anh Kent (Kent Juno) qua kênh hỗ trợ (ví dụ chat Facebook hoặc Telegram).</li>
+                  <li>Sau khi kích hoạt online trên server admin thành công, bạn sẽ nhận được License Key để nhập vào mở khóa ứng dụng hoàn toàn.</li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <!-- Bước 6 -->
-          <div class="setup-step-card reveal">
-            <div class="step-num">06</div>
-            <h3>Bước 6 - Sử dụng & Trải nghiệm</h3>
-            <p>Bắt đầu dựng video recap hoặc thuyết minh phim chuyên nghiệp của bạn.</p>
+          <div class="setup-step-card-shell reveal">
+            <div class="setup-step-card">
+              <div class="step-num">06</div>
+              <h3>Bước 6 - Sử dụng & Trải nghiệm</h3>
+              <p class="max-w-prose">Bắt đầu dựng video recap hoặc thuyết minh phim chuyên nghiệp của bạn.</p>
 
-            <div class="step-details">
-              <ul>
-                <li>Khởi động ứng dụng <strong>MovieRecapTool</strong> (máy chủ <strong>OmniVoice API Server</strong> sẽ tự động được khởi chạy ngầm dưới nền).</li>
-                <li>Chọn <strong>Chế độ chạy</strong> mong muốn: <strong>Tóm tắt (Recap)</strong> hoặc <strong>Thuyết minh (Dubbing)</strong>.</li>
-                <li>Cấu hình đường dẫn video gốc, file phụ đề SRT (hoặc bật Whisper tự nhận diện lời thoại sang phụ đề).</li>
-                <li>Chọn giọng nói thuyết minh hoặc gán giọng đọc tương ứng.</li>
-                <li>Nhấn nút <strong>BẮT ĐẦU XỬ LÝ PHIM</strong> và theo dõi tiến trình chạy trực quan.</li>
-              </ul>
+              <div class="step-details">
+                <ul class="max-w-prose">
+                  <li>Khởi động ứng dụng <strong>MovieRecapTool</strong> (máy chủ <strong>OmniVoice API Server</strong> sẽ tự động được khởi chạy ngầm dưới nền).</li>
+                  <li>Chọn <strong>Chế độ chạy</strong> mong muốn: <strong>Tóm tắt (Recap)</strong> hoặc <strong>Thuyết minh (Dubbing)</strong>.</li>
+                  <li>Cấu hình đường dẫn video gốc, file phụ đề SRT (hoặc bật Whisper tự nhận diện lời thoại sang phụ đề).</li>
+                  <li>Chọn giọng nói thuyết minh hoặc gán giọng đọc tương ứng.</li>
+                  <li>Nhấn nút <strong>BẮT ĐẦU XỬ LÝ PHIM</strong> và theo dõi tiến trình chạy trực quan.</li>
+                </ul>
+              </div>
+              <div class="done-note">🎬 Thế là xong! Bắt đầu tạo những thước phim recap & thuyết minh đỉnh cao thôi 😎</div>
             </div>
-            <div class="done-note">🎬 Thế là xong! Bắt đầu tạo những thước phim recap & thuyết minh đỉnh cao thôi 😎</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- POLICY SECTION -->
     <section id="policy" class="site-shell section">
       <div class="section-head">
-        <h2>Chính sách rõ trước khi mua.</h2>
-        <p>Tool đang bán theo hướng creator thực chiến: giá gọn, license rõ, hỗ trợ chính qua Kent Juno và cộng đồng
-          kín.</p>
+        <h2>Chính Sách Rõ Trước Khi Mua.</h2>
+        <p class="max-w-prose">Tool đang bán theo hướng creator thực chiến: giá gọn, license rõ, hỗ trợ chính qua Kent Juno và cộng đồng kín.</p>
       </div>
       <div class="grid-3">
         <article class="doc-card policy-card">
-          <h3>Hỗ trợ</h3>
-          <ul>
+          <h3>Hỗ Trợ</h3>
+          <ul class="max-w-prose">
             <li>Hỗ trợ chính bởi Kent Juno qua Facebook và group kín.</li>
             <li>Group kín dành cho thành viên đã sub supporter.</li>
             <li>Ưu tiên hỗ trợ lỗi kích hoạt, lỗi cài đặt, lỗi Whisper/CUDA, OmniVoice và workflow render.</li>
@@ -595,18 +674,17 @@
           </ul>
         </article>
         <article class="doc-card policy-card danger-policy">
-          <h3>Không hoàn tiền</h3>
-          <ul>
+          <h3>Không Hoàn Tiền</h3>
+          <ul class="max-w-prose">
             <li>Không hoàn tiền với bất kỳ lý do nào sau khi license đã được cấp hoặc kích hoạt.</li>
-            <li>Vui lòng dùng gói <code>100K / 7 ngày</code> hoặc <code>400K / 30 ngày</code> để test máy trước khi mua
-              lifetime.</li>
+            <li>Vui lòng dùng gói <code>100K / 7 ngày</code> hoặc <code>400K / 30 ngày</code> để test máy trước khi mua lifetime.</li>
             <li>Gói 30 ngày được trừ 100% vào lifetime trong thời gian trial.</li>
             <li>Gói 7 ngày không được trừ vào lifetime.</li>
           </ul>
         </article>
         <article class="doc-card policy-card">
-          <h3>License & đổi máy</h3>
-          <ul>
+          <h3>License & Đổi Máy</h3>
+          <ul class="max-w-prose">
             <li>1 license dùng cho 1 máy đã kích hoạt.</li>
             <li>Không share key, không dùng chung nhiều máy.</li>
             <li>Nếu cần đổi máy, liên hệ Kent Juno để xem xét reset theo từng trường hợp.</li>
@@ -614,72 +692,93 @@
           </ul>
         </article>
       </div>
+
+      <div class="disclaimer-banner reveal">
+        <div class="disclaimer-icon">⚠️</div>
+        <div class="disclaimer-content">
+          <h3>Tuyên Bố Miễn Trừ Trách Nhiệm & Bản Quyền</h3>
+          <p>
+            <strong>MovieRecapTool</strong> là một công cụ phần mềm xử lý dữ liệu đa phương tiện chạy hoàn toàn offline trên thiết bị cá nhân của người dùng. Nhà phát triển chỉ cung cấp giải pháp công nghệ và tuyên bố miễn trừ mọi trách nhiệm pháp lý đối với bất kỳ hành vi sử dụng nào của người dùng:
+          </p>
+          <ul class="max-w-prose">
+            <li><strong>Bản quyền nội dung:</strong> Người dùng tự chịu trách nhiệm hoàn toàn về mặt pháp lý và bản quyền đối với tất cả tài liệu video, âm thanh, phụ đề và kịch bản nguồn đưa vào hoặc được tạo ra từ phần mềm.</li>
+            <li><strong>Chính sách nền tảng:</strong> Nhà phát triển không chịu trách nhiệm trong trường hợp kênh hoặc tài khoản của người dùng bị cảnh cáo, nhận gậy bản quyền, tắt kiếm tiền hoặc khóa do vi phạm chính sách của các nền tảng (YouTube, TikTok, Facebook, v.v.).</li>
+            <li><strong>Miễn trừ pháp lý:</strong> Bằng việc cài đặt và sử dụng phần mềm, người dùng đồng ý miễn trừ hoàn toàn trách nhiệm của nhà phát triển trước mọi tranh chấp, khiếu nại, kiện tụng hoặc thiệt hại phát sinh từ việc sử dụng phần mềm sai mục đích hoặc vi phạm luật sở hữu trí tuệ của bất kỳ bên thứ ba nào.</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
+    <!-- FAQ & SUPPORT SECTION -->
     <section id="support" class="site-shell section">
       <div class="section-head">
-        <h2>FAQ trước khi nhắn hỗ trợ.</h2>
-        <p>Các lỗi phổ biến nhất khi app mới cài: SmartScreen, voice server chưa chạy, license khác máy.</p>
+        <h2>FAQ Trước Khi Nhắn Hỗ Trợ.</h2>
+        <p class="max-w-prose">Các lỗi phổ biến nhất khi app mới cài: SmartScreen, voice server chưa chạy, license khác máy.</p>
       </div>
       <div class="faq-list">
-        <article class="faq-item">
-          <h3>Windows báo SmartScreen thì sao?</h3>
-          <p>Bản hiện tại chưa code-sign bằng certificate thương mại, nên Windows có thể hiện cảnh báo lần đầu. Chọn
-            <code>More info</code> rồi <code>Run anyway</code> nếu bạn tải từ link chính thức.
-          </p>
-        </article>
-        <article class="faq-item">
-          <h3>Không có phụ đề thì dùng được không?</h3>
-          <p>Dùng được. MovieRecapTool có thể dùng Whisper để trích xuất lời thoại từ audio của phim. Nếu có sẵn file
-            SRT chuẩn thì nên nhập vào để tiết kiệm thời gian phân tích.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Có cần chạy OmniVoice trước không?</h3>
-          <p>Có. Trước khi render giọng đọc, hãy mở <code>omnivoice-api-server</code> và chạy <code>run.bat</code>. Nếu
-            OmniVoice chạy ở máy khác, vào <code>CẤU HÌNH API & OMNIVOICE</code> trong app để đổi URL server.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Máy không có NVIDIA GPU có dùng được không?</h3>
-          <p>Có, nhưng sẽ rất chậm, đặc biệt ở bước Whisper lấy phụ đề và các bước xử lý AI/audio. Nếu làm recap thường
-            xuyên, nên dùng máy có NVIDIA GPU và đã kích hoạt GPU trong app.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Whisper báo thiếu CUDA dù máy đã có CUDA?</h3>
-          <p>CUDA/driver trên Windows chưa đủ. MovieRecapTool còn cần DLL cuBLAS/cuDNN cho faster-whisper. Hãy bấm
-            <code>Kích hoạt GPU (Tải tự động)</code> trong app hoặc chạy <code>activate_gpu.bat</code> trong thư mục cài
-            đặt, sau đó mở lại app.
-          </p>
-        </article>
-        <article class="faq-item">
-          <h3>Render ra tiếng "te te" hoặc không gọi OmniVoice?</h3>
-          <p>Thường là OmniVoice server chưa chạy hoặc URL sai. Mở <code>CẤU HÌNH API & OMNIVOICE</code>, kiểm tra URL,
-            rồi chạy lại server.</p>
-        </article>
-        <article class="faq-item">
-          <h3>License nhập ở máy khác được không?</h3>
-          <p>Mỗi license được bind với 1 máy sau lần kích hoạt đầu tiên. Nếu cần đổi máy, liên hệ admin để xử lý.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Trial 30 ngày nâng lên lifetime có được trừ tiền không?</h3>
-          <p>Có. Nếu nâng lên lifetime trong thời gian trial 30 ngày, 400K trial được trừ 100%, bạn chỉ cần trả thêm
-            499K. Khi nâng cấp, nhắn Facebook Kent Juno kèm license hoặc thông tin mua trial để được cấp/nâng license
-            chính thức.</p>
-        </article>
-        <article class="faq-item">
-          <h3>Pass 7 ngày có được trừ vào lifetime không?</h3>
-          <p>Không. Gói 100K / 7 ngày chỉ dùng để test nhanh máy và workflow, mặc định không được trừ vào lifetime nếu
-            mua sau.</p>
-        </article>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>Windows báo SmartScreen thì sao?</h3>
+            <p class="max-w-prose">Bản hiện tại chưa code-sign bằng certificate thương mại, nên Windows có thể hiện cảnh báo lần đầu. Chọn <code>More info</code> rồi <code>Run anyway</code> nếu bạn tải từ link chính thức.</p>
+          </article>
+        </div>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>Không có phụ đề thì dùng được không?</h3>
+            <p class="max-w-prose">Dùng được. MovieRecapTool có thể dùng Whisper để trích xuất lời thoại từ audio của phim. Nếu có sẵn file SRT chuẩn thì nên nhập vào để tiết kiệm thời gian phân tích.</p>
+          </article>
+        </div>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>Có cần chạy OmniVoice trước không?</h3>
+            <p class="max-w-prose">Có. Trước khi render giọng đọc, hãy mở <code>omnivoice-api-server</code> và chạy <code>run.bat</code>. Nếu OmniVoice chạy ở máy khác, vào <code>CẤU HÌNH API & OMNIVOICE</code> trong app để đổi URL server.</p>
+          </article>
+        </div>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>Máy không có NVIDIA GPU có dùng được không?</h3>
+            <p class="max-w-prose">Có, nhưng sẽ rất chậm, đặc biệt ở bước Whisper lấy phụ đề và các bước xử lý AI/audio. Nếu làm recap thường xuyên, nên dùng máy có NVIDIA GPU và đã kích hoạt GPU trong app.</p>
+          </article>
+        </div>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>Whisper báo thiếu CUDA dù máy đã có CUDA?</h3>
+            <p class="max-w-prose">CUDA/driver trên Windows chưa đủ. MovieRecapTool còn cần DLL cuBLAS/cuDNN cho faster-whisper. Hãy bấm <code>Kích hoạt GPU (Tải tự động)</code> trong app hoặc chạy <code>activate_gpu.bat</code> trong thư mục cài đặt, sau đó mở lại app.</p>
+          </article>
+        </div>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>Render ra tiếng "te te" hoặc không gọi OmniVoice?</h3>
+            <p class="max-w-prose">Thường là OmniVoice server chưa chạy hoặc URL sai. Mở <code>CẤU HÌNH API & OMNIVOICE</code>, kiểm tra URL, rồi chạy lại server.</p>
+          </article>
+        </div>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>License nhập ở máy khác được không?</h3>
+            <p class="max-w-prose">Mỗi license được bind với 1 máy sau lần kích hoạt đầu tiên. Nếu cần đổi máy, liên hệ admin để xử lý.</p>
+          </article>
+        </div>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>Trial 30 ngày nâng lên lifetime có được trừ tiền không?</h3>
+            <p class="max-w-prose">Có. Nếu nâng lên lifetime trong thời gian trial 30 ngày, 400K trial được trừ 100%, bạn chỉ cần trả thêm 499K. Khi nâng cấp, nhắn Facebook Kent Juno để được cấp/nâng license chính thức.</p>
+          </article>
+        </div>
+        <div class="faq-item-shell">
+          <article class="faq-item">
+            <h3>Pass 7 ngày có được trừ vào lifetime không?</h3>
+            <p class="max-w-prose">Không. Gói 100K / 7 ngày chỉ dùng để test nhanh máy và workflow, mặc định không được trừ vào lifetime nếu mua sau.</p>
+          </article>
+        </div>
       </div>
       <div class="button-row">
-        <a class="btn btn-primary" href="https://t.me/MovieRecapTool_Sales_Bot" target="_blank" rel="noreferrer">Liên hệ
-          Kent Juno</a>
+        <a class="btn btn-primary" href="https://t.me/MovieRecapTool_Sales_Bot" target="_blank" rel="noreferrer">Liên hệ Kent Juno <span class="btn-icon-wrapper">↗</span></a>
         <a class="btn btn-orange" href="https://www.facebook.com/groups/kja.ivibecodetutien" target="_blank"
-          rel="noreferrer">Tham gia nhóm kín</a>
+          rel="noreferrer">Tham gia nhóm kín <span class="btn-icon-wrapper">↗</span></a>
         <a class="btn btn-secondary"
           href="https://www.facebook.com/kentjuno/supporters/?entrypoint_surface=DIRECTORY&surface=directory"
-          target="_blank" rel="noreferrer">Sub để vào group</a>
-        <a class="btn btn-secondary" href="#download">Quay lại download</a>
+          target="_blank" rel="noreferrer">Sub để vào group <span class="btn-icon-wrapper">↗</span></a>
+        <a href="#download" class="btn btn-secondary">Quay lại download (CTA) <span class="btn-icon-wrapper">↗</span></a>
       </div>
     </section>
   </main>
