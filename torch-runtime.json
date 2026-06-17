@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "comment": "GPU -> PyTorch wheel mapping for MovieRecapTool runtime setup. Edit + push to fix new GPUs WITHOUT rebuilding the app; users hit 'Cài lại Engine giọng (GPU)'. First matching rule wins; each candidate is tried in order and verified with a real CUDA kernel, falling back to the next.",
+  "index_urls": {
+    "cu128": "https://download.pytorch.org/whl/cu128",
+    "cu124": "https://download.pytorch.org/whl/cu124",
+    "cu121": "https://download.pytorch.org/whl/cu121",
+    "cpu": "https://download.pytorch.org/whl/cpu"
+  },
+  "default_candidates": ["cpu"],
+  "rules": [
+    { "name_contains": "RTX 50", "candidates": ["cu128", "cu124", "cpu"] },
+    { "name_contains": "RTX 40", "candidates": ["cu124", "cu121", "cpu"] },
+    { "name_contains": "RTX 30", "candidates": ["cu124", "cu121", "cpu"] },
+    { "name_contains": "RTX 20", "candidates": ["cu124", "cu121", "cpu"] },
+    { "driver_min": 555, "candidates": ["cu124", "cu121", "cpu"] },
+    { "driver_min": 528, "candidates": ["cu121", "cpu"] }
+  ]
+}
