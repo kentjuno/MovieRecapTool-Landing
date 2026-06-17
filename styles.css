@@ -1579,6 +1579,37 @@ h3 {
   }
 }
 
+
+/* 9c. TOP ANNOUNCEMENT BANNER */
+.announcement-banner {
+  background: linear-gradient(90deg, var(--red) 0%, var(--orange) 100%);
+  color: #131110;
+  text-align: center;
+  padding: 12px 20px;
+  font-weight: 800;
+  font-size: 14.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  z-index: 30;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.02em;
+}
+
+.announcement-banner strong {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .announcement-banner {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1588,3 +1619,4 @@ h3 {
     transition-duration: 1ms !important;
   }
 }
+
