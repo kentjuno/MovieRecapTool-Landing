@@ -82,7 +82,7 @@ http://127.0.0.1:4173
 
 ## Public Pricing Copy
 
-- Lifetime license: `899K`.
+- Lifetime license: `1.499K`.
 - 30-day trial: `400K`.
 - 30-day trial can be credited toward lifetime upgrade during the active trial period.
 - 7-day pass: `100K`.
